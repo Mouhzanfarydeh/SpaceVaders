@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // wird automatisch auf den Player bezogen beim raufziehen des Scriptes
+// Nur für Maus 
+/*
 [RequireComponent (typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
+*/
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    bool isDragged;
+    // Nur für Maus
+
+   /* bool isDragged; */
+    // isDragged = true; //
     Vector3 screenPoint;
     Vector3 offset;
+
 
     //Bullet
     public Transform[] bulletSpawns;
@@ -20,31 +27,46 @@ public class PlayerBehaviour : MonoBehaviour
     public double fireRate = 0.5; // Später noch anpassbar
     public GameObject bullet;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    // Der Teil ist verbuggt und muss noch gelöst werden, kümmere mich später darum...
-    // könnte daran liegen das dass Array in den Minus bereich geht https://answers.unity.com/questions/1238243/how-do-i-fix-index-out-of-range-exception-error.html#:~:text=Generally%20%40masonb21%2C%20Array%20out%20of,1%20length%20of%20the%20array.
-    
     // Update is called once per frame
-    
+
     void Update()
     {
-        if(isDragged && Time.time > nextFireBullet)
+        if ( /* isDragged &&  */ Time.time > nextFireBullet)
         {
             nextFireBullet = Time.time + fireRate;
-            for (int i = 0; i < bulletLevel;  i++)
+            for (int i = 0; i < bulletLevel; i++)
             {
-               GameObject newBullet = Instantiate(bullet, bulletSpawns[i].position, bulletSpawns[i].rotation) as GameObject;
+                GameObject newBullet = Instantiate(bullet, bulletSpawns[i].position, bulletSpawns[i].rotation) as GameObject;
                 // Bringt der Bullet Schaden
-    newBullet.GetComponent<Bullet>().SetDamage(bulletDamage);
+                newBullet.GetComponent<Bullet>().SetDamage(bulletDamage);
             }
         }
+
     }
-    
-    void OnMouseDown()
+}
+
+    // Movement Keyboard
+
+    /*
+    void Update()
+    {
+        float x = Input.GetAxis("Horizontal");
+    float z = Input.GetAxis("Vertical");
+
+    Vector3 move = transform.right * x + transform.forward * z;
+
+    controller.Move(move* speed * Time.deltaTime);
+
+velocity.y += gravity * Time.deltaTime;
+
+controller.Move(velocity * Time.deltaTime);
+    }
+    */
+
+
+    //Movement Mouse
+
+   /* void OnMouseDown()
     {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -65,5 +87,5 @@ public class PlayerBehaviour : MonoBehaviour
        {
            isDragged = false;
        }
-    
-}
+    */
+

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     int damage;
-    public float speed = 10f; // geschwindigkeit der Schüsse, später noch anpassbar muss man erst mal testen
+    public float speed = 10f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
 
     // Update is called once per frame
