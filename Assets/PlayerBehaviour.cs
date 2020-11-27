@@ -13,10 +13,11 @@ public class PlayerBehaviour : MonoBehaviour
 {
     // Nur für Maus
 
-   /* bool isDragged; */
+    /* bool isDragged; */
     // isDragged = true; //
     Vector3 screenPoint;
     Vector3 offset;
+
 
 
     //Bullet

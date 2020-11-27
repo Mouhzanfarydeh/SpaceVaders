@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 */
 
-public class Bullet : MonoBehaviour
+public class Rocket : MonoBehaviour
 {
     int damage;
     public float speed = 10f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
