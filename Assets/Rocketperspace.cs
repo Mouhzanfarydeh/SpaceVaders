@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Rocketperspace : MonoBehaviour
 {
     Vector3 screenPoint;
@@ -10,6 +11,7 @@ public class Rocketperspace : MonoBehaviour
     //Rocket
     public Transform[] rocketSpawns;
     double nextFireRocket;
+    int rocketcounter = 3;
     int rocketLevel = 1; // Anzahl der Schüsse, später noch anpassbar
     int rocketDamage = 3; // Später noch anpassbar
     public double RocketfireRate = 1; // Später noch anpassbar
@@ -19,8 +21,9 @@ public class Rocketperspace : MonoBehaviour
     void Update()
     {
         // Rakete per leertaste schießen
-        if (Input.GetKeyDown("space")) /* isDragged &&  Time.time > nextFireRocket)  */ // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
+        if (Input.GetKeyDown("space")) //&& 0 < rocketcounter;) /* isDragged &&  Time.time > nextFireRocket)  */ // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
         {
+            //rocketcounter i--;
             nextFireRocket = Time.time + RocketfireRate;
             for (int i = 0; i < rocketLevel; i++)
             {
@@ -29,5 +32,10 @@ public class Rocketperspace : MonoBehaviour
                // newRocket.GetComponent<Rocket>().SetDamage(rocketDamage);
             }
         }
+        else
+        {
+         //   Console.WriteLine("Not enough rockets ");
+        }
+            
     }
 }
