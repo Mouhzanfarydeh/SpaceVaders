@@ -17,6 +17,14 @@ public float speed = 2;
     float distance; // Distanz zum nächsten Wegpunkt
     // für zickzack movement (use Bezier Path and not pass points)
     public bool useBezier = false;
+
+    // Effect wenn Gegner zerstört wird
+    public GameObject Explosion;
+
+    // Leben der Gegner
+    public int health = 2;
+    // weiter gehts in Zeile 100
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,4 +98,26 @@ public float speed = 2;
 
     }
     
+
+
+    // genommener Schaden
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if(health<=0)
+        {
+            // Verliere Leben
+
+            // Spiele Sound ab
+
+            // Spiele Effect ab
+            if (Explosion != null)
+            {
+                Instantiate(Explosion, transform.position, Quaternion.identity);
+            }
+
+            // Zerstöre Spieler
+            Destroy(gameObject);
+        }
+    }
 }
