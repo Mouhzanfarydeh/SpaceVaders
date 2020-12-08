@@ -10,7 +10,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage;
-    public float speed = 10f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
+    public float speed = 25f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
     // zerstöre Kugel nach 10 Sekunden
     void Start()
