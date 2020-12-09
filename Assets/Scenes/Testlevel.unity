@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 616642605}
   - component: {fileID: 616642604}
   - component: {fileID: 616642603}
+  - component: {fileID: 616642606}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1378,12 +1379,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616642602}
   m_LocalRotation: {x: 0.02248947, y: -0, z: -0, w: 0.9997471}
-  m_LocalPosition: {x: 0.020000458, y: 3.26, z: -14.14}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 20, y: 10.719999, z: 1.4200001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1730464658}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 2.577, y: 0, z: 0}
+--- !u!114 &616642606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616642602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc48b18b903b7904a9f31927a5eafdd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1730464658}
+  smoothSpeed: 5
+  offset: {x: 0, y: 5, z: -30}
 --- !u!1 &647100403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113641371}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.8090007}
+  m_LocalPosition: {x: 0, y: -0.12, z: 1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1798429425}
@@ -2487,9 +2503,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 117214286460000749, guid: c5c4ece088f4383498e0f71eb98a47d5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c5c4ece088f4383498e0f71eb98a47d5, type: 3}
       propertyPath: m_Name
       value: Asteroid 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c4ece088f4383498e0f71eb98a47d5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c4ece088f4383498e0f71eb98a47d5, type: 3}
@@ -2874,14 +2898,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798429420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 40.7, y: 8.38, z: 161.9}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1113641372}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!135 &1798429426
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2925,8 +2949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyBulletSpawner: {fileID: 1113641371}
   Kugel: {fileID: 5043836567544783281, guid: 925194568655cb24b8689a489b06218b, type: 3}
-  Bullet_Forward_Force: 50
-  FireRate: 0.5
+  Bullet_Forward_Force: 3000
+  FireRate: 4
 --- !u!1 &1878704721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,6 +3293,10 @@ PrefabInstance:
     - target: {fileID: 344923026524580042, guid: 90c10eb1f5c5e4f42b6cfd1c7f833ba5, type: 3}
       propertyPath: m_Name
       value: Asteroid 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 344923026524580042, guid: 90c10eb1f5c5e4f42b6cfd1c7f833ba5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1117659096660177520, guid: 90c10eb1f5c5e4f42b6cfd1c7f833ba5, type: 3}
       propertyPath: m_RootOrder
