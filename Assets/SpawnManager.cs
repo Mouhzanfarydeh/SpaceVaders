@@ -24,11 +24,29 @@ public class SpawnManager : MonoBehaviour
 
     public List <Wave> waveList = new List<Wave>();
 
-    // Start is called before the first frame update
+    /*
     void Start()
     {
-        
+        //Aufrufen des Start Punkt
+        Invoke("StartSpawn", 3f);
     }
+    //FLYs
+    spawned Enemies.Add(newFly);
+    //weitergeben an Game Manager
+    GameManager.instance.AddEnemy();
+
+    //Wasps
+    spawned Enemies.Add(newWasp);
+    //weitergeben an Game Manager
+    GameManager.instance.AddEnemy();
+
+    //Boss
+    spawned Enemies.Add(newBoss);
+    //weitergeben an Game Manager
+    GameManager.instance.AddEnemy();
+    */
+
+
 
     // Update is called once per frame
     void Update()

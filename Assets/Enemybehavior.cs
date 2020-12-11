@@ -22,8 +22,12 @@ public float speed = 2;
     public GameObject Explosion;
 
     // Leben der Gegner
-    public int health = 2;
+    public int health = 1;
     // weiter gehts in Zeile 100
+
+    // Score
+ //   public int inFormationScore;
+      public int /* notinFormation */ Score;
 
     // Start is called before the first frame update
     void Start()
@@ -97,7 +101,7 @@ public float speed = 2;
         }
 
     }
-    
+
 
 
     // genommener Schaden
@@ -118,6 +122,30 @@ public float speed = 2;
 
             // Zerstöre Spieler
             Destroy(gameObject);
+
+
+           // GameManager.instance.AddScore(Score);
+            // Erhöhe Punltzahl
+            /*  if(enemyState == EnemyStates.IDLE) //bedeutet in der Formation erst mal nicht umsetzten
+            {
+            GameManager.instance.AddScore(inFormationScore);
+            else...
+            }
+            */
+
+            //  GameManager.instance.AddScore(Score); //(NotinFormationScore);
+            //  }
+
+
+
+
+
+
+
+
+            //weitergeben an Game Manager
+            //  GameManager.instance.ReduceEnemy();
+
         }
     }
 }
