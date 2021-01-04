@@ -7,15 +7,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 
 
-public class Bullet : MonoBehaviour
+public class PlayerBullet : MonoBehaviour
 {
     public int damage;
     public float speed = 25f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
-    // zerstöre Kugel nach 10 Sekunden
     void Start()
     {
-        Destroy(gameObject, 10f);
+        // zerstöre Kugel nach 9 Sekunden
+        Destroy(gameObject, 9f);
     }
 
 

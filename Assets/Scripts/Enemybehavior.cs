@@ -86,6 +86,8 @@ public float rotationSpeed = 5f;
             transform.SetParent(formation.gameObject.transform); // Gegner werden Unterobjecte der Formation
             transform.eulerAngles = new Vector3(0, 0, 0); //= Vector3.zero;
 
+            formation.enemyList.Add(new Formation.EnemyFormation(enemyID, transform.localPosition.x, transform.localPosition.z, this.gameObject));
+
             enemyState = EnemyStates.IDLE;
             // Dreht sich zum Spieler hin
         }
@@ -175,7 +177,7 @@ public float rotationSpeed = 5f;
         {
             // Verliere Leben
 
-            // Spiele Sound ab
+            // Spiele Sound ab passiert in der explosion
 
             // Spiele Effect ab
             if (Explosion != null)
@@ -183,31 +185,31 @@ public float rotationSpeed = 5f;
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
-            // Zerstöre Spieler
+            // Erhöhe Punltzahl
+            if (enemyState == EnemyStates.IDLE) //bedeutet in der Formation 
+            {
+                GameManager.instance.AddScore(/*inFormation*/Score);
+            }
+            else
+            { 
+            GameManager.instance.AddScore(/*notFormation*/Score);
+            }
+
+
+            //Weitergeben an Formation
+            for (int i = 0; i < formation.enemyList.Count; i++)
+            {
+                if(formation.enemyList[i].index == enemyID)
+                {
+                    formation.enemyList.Remove(formation.enemyList[i]);
+                }
+            }
+           
+            // Zerstöre Gegner
             Destroy(gameObject);
 
-
-           // GameManager.instance.AddScore(Score);
-            // Erhöhe Punltzahl
-            /*  if(enemyState == EnemyStates.IDLE) //bedeutet in der Formation erst mal nicht umsetzten
-            {
-            GameManager.instance.AddScore(inFormationScore);
-            else...
-            }
-            */
-
-            //  GameManager.instance.AddScore(Score); //(NotinFormationScore);
-            //  }
-
-
-
-
-
-
-
-
             //weitergeben an Game Manager
-            //  GameManager.instance.ReduceEnemy();
+            GameManager.instance.ReduceEnemy();
 
         }
     }

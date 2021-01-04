@@ -221,12 +221,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathToFollow: {fileID: 0}
   currentWayPointID: 0
-  speed: 2
+  speed: 16
   reachDistance: 0.4
   rotationSpeed: 5
-  useBezier: 0
-  Explosion: {fileID: 0}
-  health: 2
+  useBezier: 1
+  enemyState: 0
+  enemyID: 0
+  formation: {fileID: 0}
+  Explosion: {fileID: 2914309373149034468, guid: 8bc67bca5dac56b44a5373121652b621, type: 3}
+  health: 1
+  Score: 100
 --- !u!1 &8192370930593635457
 GameObject:
   m_ObjectHideFlags: 0

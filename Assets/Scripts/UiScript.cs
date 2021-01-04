@@ -27,6 +27,7 @@ public class UiScript : MonoBehaviour
     }
     */
      // Text verändert sich je nach dem was passiert
+
      public void UpdateScoreText(int amount)
      {
 
@@ -43,7 +44,7 @@ public class UiScript : MonoBehaviour
         stageText.gameObject.SetActive(true);
         stageText.text = "Stage " + amount;
 
-        Invoke("DeactivateStagetext", 100f);
+        Invoke("DeactivateStagetext", 3f);
     }
 
     void DeactivateStagetext()

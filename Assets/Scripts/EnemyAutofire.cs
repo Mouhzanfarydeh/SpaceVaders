@@ -52,16 +52,19 @@ public class EnemyAutofire : MonoBehaviour
             // needs to get destroyed when hiting
             Destroy(Temporary_Bullet_Handler, 5.0f);
         }
-
-       // if ( /* isDragged &&  */ Time.time > nextFireBullet)
-        //{
-        //    nextFireBullet = Time.time + fireRate;
-        //    for (int i = 0; i < bulletLevel; i++)
-        //    {
-        //        GameObject newBullet = Instantiate(bullet, bulletSpawns[i].position, bulletSpawns[i].rotation) as GameObject;
-        //         Bringt der Bullet Schaden
-        //        newBullet.GetComponent<Bullet>().SetDamage(bulletDamage);
-        //    }
-        //}
     }
 }
+
+
+    // if ( /* isDragged &&  */ Time.time > nextFireBullet)
+    //{
+    //    nextFireBullet = Time.time + fireRate;
+    //    for (int i = 0; i < bulletLevel; i++)
+    //    {
+    //        GameObject newBullet = Instantiate(bullet, bulletSpawns[i].position, bulletSpawns[i].rotation) as GameObject;
+    //         Bringt der Bullet Schaden
+    //        newBullet.GetComponent<Bullet>().SetDamage(bulletDamage);
+    //    }
+    //}
+
+

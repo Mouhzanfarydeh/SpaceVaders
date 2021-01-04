@@ -177,7 +177,7 @@ MonoBehaviour:
   speed: 30
   reachDistance: 0.4
   rotationSpeed: 5
-  useBezier: 0
+  useBezier: 1
   enemyState: 0
   enemyID: 0
   formation: {fileID: 0}

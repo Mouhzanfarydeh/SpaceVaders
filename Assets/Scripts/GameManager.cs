@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -10,14 +12,14 @@ public class GameManager : MonoBehaviour
     // static damit es gespeichert wird und sich nicht verändert wenn die nächste level beginnt
 
     static int level = 1; // aktuelle Level
-    static int score;
+    static int score = 0;
     static int lifes = 3;
 
     // Anzahl der Gegner in der Scene
     int enemyAmount;
 
     // Extraleben nach bestimmter Punktzahl
-    int scoreToBonusLife = 10000; //später noch anpassbar
+    public int scoreToBonusLife = 10000; //später noch anpassbar
 
     // Punktzahl nach zerstörung der Gegner
     static int bonusScore;
@@ -28,13 +30,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this; //sichgehen das Game Manager existiert
-    }
 
-    void Update()
-    {
-        UiScript.instance.UpdateScoreText(score);
-        UiScript.instance.UpdateLifeText(lifes);
-        UiScript.instance.ShowStageText(level);
 
 
         //Reset der Level
@@ -48,6 +44,14 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    void Start()
+    {
+        UiScript.instance.UpdateScoreText(score);
+        UiScript.instance.UpdateLifeText(lifes);
+        UiScript.instance.ShowStageText(level);
+    }
+
     public void AddScore(int amount)
     {
         score += amount;
@@ -71,9 +75,12 @@ public class GameManager : MonoBehaviour
 
         UiScript.instance.UpdateLifeText(lifes);
 
-        if (lifes < 0)
+        if (lifes <=0)
         {
             // Game Over - Losing Condition
+            //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
+            ScoreHolder.score = score;
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -90,7 +97,9 @@ public class GameManager : MonoBehaviour
         if (enemyAmount <= 0)
         {
             // Prüfung der Siegesbedingungen
+            level++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //startet nächste Stage(Level/Scene)
         }
     }
 
-    }
+}

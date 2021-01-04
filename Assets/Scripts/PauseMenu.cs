@@ -12,7 +12,8 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
+      //if (Input.GetMouseButton(0)) //der erste klick der Maus
+            {
             if (GameIsPaused)
             {
                 Resume();

@@ -17,8 +17,8 @@ public class Path : MonoBehaviour
     public List<Transform> pathObjList = new List<Transform>();
 
     public List<Vector3> bezierObjList = new List<Vector3>();
-    
 
+    public bool visualizePath;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +33,8 @@ public class Path : MonoBehaviour
     // visualisierung der Gegnerwege (Einzeichnen)
     void OnDrawGizmos()
     {
+      if(visualizePath)
+      {     
         //Gerade Gegnerbewegung
         Gizmos.color = pathColor;
         //füllen des Arrays mit Objekten (Zukünftigen Gegnern)
@@ -107,6 +109,12 @@ public class Path : MonoBehaviour
                 bezierObjList.Add(lineStart);
             }
         }
+      }
+      else
+      {
+        pathObjList.Clear();
+        bezierObjList.Clear();
+      }
     }
     // p steht für pathpoint im pathholder 
     Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, float t)
