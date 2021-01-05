@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyBulletSpawner: {fileID: 145697248365198032}
-  Kugel: {fileID: 5043836567544783281, guid: 925194568655cb24b8689a489b06218b, type: 3}
+  Kugel: {fileID: 6338304298773958739, guid: 33cf4bc95d49c1e48ad2d239e1ae5afa, type: 3}
   Bullet_Forward_Force: -3000
   FireRate: 4
 --- !u!54 &2304102635169349052
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyBulletSpawner: {fileID: 145697248520827005}
-  Kugel: {fileID: 5043836567544783281, guid: 925194568655cb24b8689a489b06218b, type: 3}
+  Kugel: {fileID: 6338304298773958739, guid: 33cf4bc95d49c1e48ad2d239e1ae5afa, type: 3}
   Bullet_Forward_Force: -3000
   FireRate: 4
 --- !u!1 &7013401944968034042
