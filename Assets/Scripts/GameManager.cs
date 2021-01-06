@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    //private int nextSceneToLoad;
 
     // static damit es gespeichert wird und sich nicht verändert wenn die nächste level beginnt
 
@@ -31,8 +32,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this; //sichgehen das Game Manager existiert
 
-
-
         //Reset der Level
         if (hasLost)
         {
@@ -44,7 +43,12 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
+    /*
+    private void Start()
+    {
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1);
+    }
+   */
     void Start()
     {
         UiScript.instance.UpdateScoreText(score);
@@ -80,11 +84,13 @@ public class GameManager : MonoBehaviour
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
             ScoreHolder.score = score;
+            hasLost = true;
             SceneManager.LoadScene("GameOver");
         }
     }
 
     //Wird erhöht wenn Gegner erscheint
+    
     public void AddEnemy()
     {
         enemyAmount++;
@@ -98,8 +104,21 @@ public class GameManager : MonoBehaviour
         {
             // Prüfung der Siegesbedingungen
             level++;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //startet nächste Stage(Level/Scene)
+         //SceneManager.LoadScene("Stage2");
+         //SceneManager.LoadScene(nextSceneToLoad);
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-    }
 
+
+    }
+    /*
+    public void WinCondition()
+    {
+        // Prüfung der Siegesbedingungen
+        level++;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //startet nächste Stage(Level/Scene)
+         SceneManager.LoadScene("Stage2"); // hier nächste level hinzufügen
+    }
+    */
 }

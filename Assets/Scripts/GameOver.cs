@@ -12,12 +12,17 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        highscoreText.text = "Highscore " + ScoreHolder.score;
+        highscoreText.text = "HighScore " + ScoreHolder.score;
     }
 
     void Update()
     {
         if(Input.GetMouseButton(0)) //der erste klick der Maus
+        {
+            SceneManager.LoadScene("Menu");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("Menu");
         }

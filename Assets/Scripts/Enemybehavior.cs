@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Enemybehavior : MonoBehaviour
 {
  public Path pathToFollow; // greift auf das Script Path zu
@@ -204,13 +203,17 @@ public float rotationSpeed = 5f;
                     formation.enemyList.Remove(formation.enemyList[i]);
                 }
             }
-           
+
             // Zerstöre Gegner
             Destroy(gameObject);
 
+            // weitergeben an Spawn Manager
+            // SpawnManager sp = GameObject.Find("SpawnManager").GetComponent<SpawnManager>(); // ----------------------------------------------- noch verbuggt
+            // sp.UpdateSpawnedEnemies(this.gameObject); //--------------------------------------------------------------------------------------
+            
             //weitergeben an Game Manager
             GameManager.instance.ReduceEnemy();
-
+  
         }
     }
 }

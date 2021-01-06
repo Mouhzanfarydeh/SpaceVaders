@@ -45,7 +45,10 @@ public class SpawnManager : MonoBehaviour
 
    List <Path> activePathList = new List<Path>(); //--------------------------------- Neue Formation
 
-   // bool spawnComplete;
+    [HideInInspector]
+    public List<GameObject> spawnedEnemies = new List<GameObject>();
+
+    bool spawnComplete;
 
     void Start()
     {
@@ -57,14 +60,24 @@ public class SpawnManager : MonoBehaviour
     {
         while(currentWave < waveList.Count) //Prüfung wie viele Wellen noch bevorsthenen und bei welcher wir gerade sind
         {
-            //--------------------------------------------------- neue Formation
+            /*
+            if(currentWave == waveList.Count-1)
+            {
+                spawnComplete = true;
+            }
+            */
+
+            //Paths neue Formation
             for (int i = 0; i < waveList[currentWave].pathPrefabs.Length; i++) //spawning pathes
             {
                 GameObject newPathObj = Instantiate(waveList[currentWave].pathPrefabs[i], transform.position, Quaternion.identity) as GameObject;
                 Path newPath = newPathObj.GetComponent<Path>();
                 activePathList.Add(newPath);
+
+
+
             }
-            //--------------------------------------------------
+            yield return new WaitForSeconds(enemySpawnInterval);
             // Spawn der Virus-Schiffe
             for (int i = 0; i < waveList[currentWave].VirusAmount; i++)
             {
@@ -73,12 +86,13 @@ public class SpawnManager : MonoBehaviour
 
                 //neue Spawn Formation
                 VirusBehavior.SpawnSetup(activePathList[ZickZack()], VirusID, VirusFormation); //einbringung der Daten vom Enemybehavior (pathToFollow = path, enemyID = ID, formation = _formation
-
-                //alte Spawn Formation
-                // VirusBehavior.SpawnSetup(waveList[currentWave].path, VirusID, VirusFormation);
                 VirusID++;
 
-            //    spawnedEnemies.Add(newVirus);
+                //alte Spawn Formation
+                //VirusBehavior.SpawnSetup(waveList[currentWave].path, VirusID, VirusFormation);
+                
+
+                spawnedEnemies.Add(newVirus);
 
                 //weitergeben an Game Manager
                 GameManager.instance.AddEnemy();
@@ -97,10 +111,10 @@ public class SpawnManager : MonoBehaviour
                 Enemy2Behavior.SpawnSetup(activePathList[ZickZack()], Enemy2ID, Enemy2Formation); //einbringung der Daten vom Enemybehavior (pathToFollow = path, enemyID = ID, formation = _formation
                 Enemy2ID++;
 
-             //   spawnedEnemies.Add(newEnemy2);
+                //spawnedEnemies.Add(newEnemy2);
 
                 //weitergeben an Game Manager
-                GameManager.instance.AddEnemy();
+                //GameManager.instance.AddEnemy();
 
                 //Warten auf nächstes Spawn (interval)
                 yield return new WaitForSeconds(enemySpawnInterval);
@@ -117,10 +131,10 @@ public class SpawnManager : MonoBehaviour
                 BossBehavior.SpawnSetup(activePathList[ZickZack()], BossID, BossFormation); //einbringung der Daten vom Enemybehavior (pathToFollow = path, enemyID = ID, formation = _formation
                 BossID++;
 
-             //   spawnedEnemies.Add(newBoss);
+                //spawnedEnemies.Add(newBoss);
 
                 //weitergeben an Game Manager
-                GameManager.instance.AddEnemy();
+                //GameManager.instance.AddEnemy();
 
                 //Warten auf nächstes Spawn (interval)
                 yield return new WaitForSeconds(enemySpawnInterval);
@@ -138,7 +152,6 @@ public class SpawnManager : MonoBehaviour
             }
             activePathList.Clear();
         }
-       // spawnComplete = true;
     }
 
     void StartSpawn()
@@ -171,10 +184,23 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("Current Total Virus: " + curVirusAmount);
       }
     }
+    
     /*
-    void ReportSpawnToGameManager()
+    void ReportToGameManager()
     {
-        if()
+           if(spawnedEnemies.Count == 0 && spawnComplete)
+       // if (spawnComplete)
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            GameManager.instance.WinCondition();
+        }
+    }
+
+    public void UpdateSpawnedEnemies(GameObject enemy)
+    {
+        spawnedEnemies.Remove(enemy);
+
+        ReportToGameManager();
     }
     */
 }

@@ -141,7 +141,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         transform.position = initPosition;
 
-        yield return new WaitForSeconds(0.5f); //warte 0.5 sekunden ab bevor respawn
+        yield return new WaitForSeconds(0.1f); //warte 0.1 sekunden ab bevor man sich wieder bewegen kann
 
         GetComponent<MeshRenderer>().enabled = true; //Greift auf das SpielerSchiff zu und schaltet es an
         GetComponent<Collider>().enabled = true;
