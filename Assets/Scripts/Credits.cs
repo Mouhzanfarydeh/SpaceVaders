@@ -4,27 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Win : MonoBehaviour
+public class Credits : MonoBehaviour
 {
-
-    public Text highscoreText;
-
-
-    void Start()
-    {
-        highscoreText.text = "HighScore " + ScoreHolder.score;
-    }
-
     void Update()
     {
         if(Input.GetMouseButton(0)) //der erste klick der Maus
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu");
         }
     }
 }

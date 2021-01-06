@@ -35,7 +35,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Player")]
     // Leben vom Spieler
-    public int health = 1;
+    public static int health = 3;
+    public static int Life = 3;
 
     // Effect wenn Spieler zerstört wird
     public GameObject Explosion;
@@ -80,15 +81,6 @@ public class PlayerBehaviour : MonoBehaviour
         */
         }
 
-
-
-
-
-
-
-
-
-
         if ( /* isDragged &&  */ Time.time > nextFireBullet) //&& !isDead)
         {
             nextFireBullet = Time.time + fireRate;
@@ -106,7 +98,9 @@ public class PlayerBehaviour : MonoBehaviour
     {
         health += amount;
 
-        if(health <= 0)
+        GameManager.instance.DecreaseHealth();
+
+        if (health <= 0)
         {
 
 
@@ -128,7 +122,6 @@ public class PlayerBehaviour : MonoBehaviour
             StartCoroutine(Reset());
 
         }
-
     }
 
     IEnumerator Reset() //Koroutine
@@ -146,6 +139,7 @@ public class PlayerBehaviour : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true; //Greift auf das SpielerSchiff zu und schaltet es an
         GetComponent<Collider>().enabled = true;
         isDead = false;
+        health = 3;
     }
 
     void OnTriggerEnter (Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.

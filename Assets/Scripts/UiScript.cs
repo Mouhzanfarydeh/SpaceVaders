@@ -13,19 +13,26 @@ public class UiScript : MonoBehaviour
     public Text scoreText;
     public Text lifeText;
     public Text stageText;
-   // public Text rocketslefttext;
+    public Text RocketText;
+    public Text Healthtext;
 
     void Awake()
     {
         instance = this;
     }
 
-  /*  public void UpdateRocketsText(int amount)
+    public void UpdateHealthText(int amount)
     {
 
-        rocketslefttext.text = "x " + amount.ToString("D2");
+        Healthtext.text = "x" + amount.ToString("D1");
     }
-    */
+
+    public void UpdateRocketText(int amount)
+    {
+
+        RocketText.text = "x" + amount.ToString("D1");
+    }
+    
      // Text verändert sich je nach dem was passiert
 
      public void UpdateScoreText(int amount)

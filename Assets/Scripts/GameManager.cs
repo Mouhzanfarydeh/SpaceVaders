@@ -15,6 +15,17 @@ public class GameManager : MonoBehaviour
     static int level = 1; // aktuelle Level
     static int score = 0;
     static int lifes = 3;
+    static int rocket = 3; //------------------------------------------------- neu hinzugefügt
+    static int health = 3;
+
+    /*
+    Rocketperspace rocketimUI;
+    void start()
+    { 
+    rocketimUI = GameObject.Find("wasp").GetComponent<Rocketperspace>();
+    Debug.Log(rocketimUI.rocketsleft);
+    }
+    */
 
     // Anzahl der Gegner in der Scene
     int enemyAmount;
@@ -38,6 +49,8 @@ public class GameManager : MonoBehaviour
             level = 1;
             score = 0;
             lifes = 3;
+            rocket = 3;
+            health = 3;
             bonusScore = 0;
             hasLost = false;
         }
@@ -54,6 +67,8 @@ public class GameManager : MonoBehaviour
         UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
         UiScript.instance.ShowStageText(level);
+        UiScript.instance.UpdateRocketText(rocket);
+        UiScript.instance.UpdateHealthText(health);
     }
 
     public void AddScore(int amount)
@@ -71,6 +86,25 @@ public class GameManager : MonoBehaviour
             //   bonusScore = 0; Problem = Beispiel Gegner besiegt man bekommt 300 Punkte  + 90800 Ergebniss = Reset auf 0 anstatt auf 100 Punkte
             bonusScore %= scoreToBonusLife; // Ergebniss wird dadurch genauer
         }
+    }
+
+    public void DecreaseHealth()
+    {
+        health--;
+
+        UiScript.instance.UpdateHealthText(health);
+
+        if (health <=0)
+        {
+            health = 3;
+        }
+    }
+
+   public void DecreaseRockets()
+    {      
+        rocket--;
+
+        UiScript.instance.UpdateRocketText(rocket);
     }
 
     public void DecreaseLifes()
@@ -102,6 +136,7 @@ public class GameManager : MonoBehaviour
         enemyAmount--;
         if (enemyAmount <= 0)
         {
+            ScoreHolder.score = score;
             // Prüfung der Siegesbedingungen
             level++;
          //SceneManager.LoadScene("Stage2");
