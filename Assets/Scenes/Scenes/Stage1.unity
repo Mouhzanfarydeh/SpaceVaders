@@ -379,7 +379,6 @@ MonoBehaviour:
   fireRate: 0.5
   bullet: {fileID: 7791082111917784016, guid: a8f3e96c768d53f41a3b867e81c16612, type: 3}
   Materials: []
-  currentMaterials: 0
   Explosion: {fileID: 0}
 --- !u!114 &163792996
 MonoBehaviour:
@@ -449,7 +448,28 @@ MonoBehaviour:
   Enemy2Formation: {fileID: 0}
   BossFormation: {fileID: 0}
   waveList:
+  - VirusAmount: 1
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 833228747590913469, guid: 43099c74c1f1a424cafc799538203514, type: 3}
   - VirusAmount: 3
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 7933706848004190843, guid: 0c10057b5fb354d4c88b845ce30bd25c, type: 3}
+  - VirusAmount: 5
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 2025515549000302067, guid: c4cadda517ef1e44fb982971426dd52f, type: 3}
+  - VirusAmount: 5
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 7933706848004190843, guid: 0c10057b5fb354d4c88b845ce30bd25c, type: 3}
+    - {fileID: 2025515549000302067, guid: c4cadda517ef1e44fb982971426dd52f, type: 3}
+  - VirusAmount: 5
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
