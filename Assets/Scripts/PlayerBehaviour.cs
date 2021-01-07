@@ -38,6 +38,12 @@ public class PlayerBehaviour : MonoBehaviour
     public static int health = 3;
     public static int Life = 3;
 
+    public Material[] Materials;
+    public static int currentMaterials;
+
+//    public Texture[] textures; // Array was die Textures beinhaltet
+//    public int currentTexture; // Über den Wert wird bestimmt welche Texture angezeigt wird
+
     // Effect wenn Spieler zerstört wird
     public GameObject Explosion;
 
@@ -53,6 +59,26 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (health = 3)
+        {
+            currentTexture++;
+            currentTexture %= textures.Length;
+            renderer.material.mainTexture = textures[currentTexture];
+        }
+        if (health = 2)
+        {
+            currentTexture++;
+            currentTexture %= textures.Length;
+            renderer.material.mainTexture = textures[currentTexture];
+        }
+        if (health = 1)
+        {
+            currentTexture++;
+            currentTexture %= textures.Length;
+            renderer.material.mainTexture = textures[currentTexture];
+        }
+        */
         if (!isDead)
         { 
         //New Movement 30.11.2020
@@ -98,7 +124,12 @@ public class PlayerBehaviour : MonoBehaviour
     {
         health += amount;
 
+        currentMaterials++;
+        currentMaterials %= Materials.Length;
+        GetComponent<Renderer>().material = Materials[currentMaterials];
+
         GameManager.instance.DecreaseHealth();
+        //renderer.material.mainMaterial = Materials[currentMaterials];
 
         if (health <= 0)
         {
