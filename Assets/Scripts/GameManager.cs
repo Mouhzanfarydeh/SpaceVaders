@@ -88,16 +88,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void HealingHealth()
+    {
+        health++;
+        health++;
+        health++;
+
+        UiScript.instance.UpdateHealthText(health);
+
+    }
+
     public void DecreaseHealth()
     {
         health--;
 
         UiScript.instance.UpdateHealthText(health);
 
+        /*
         if (health <=0)
         {
             health = 3;
         }
+        */
     }
 
    public void DecreaseRockets()

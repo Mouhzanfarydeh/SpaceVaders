@@ -140,6 +140,7 @@ public class PlayerBehaviour : MonoBehaviour
         GetComponent<Collider>().enabled = true;
         isDead = false;
         health = 3;
+        GameManager.instance.HealingHealth();
     }
 
     void OnTriggerEnter (Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
