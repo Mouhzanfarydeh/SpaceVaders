@@ -4,7 +4,7 @@ using UnityEngine;
 
 // wird automatisch auf den Player bezogen beim raufziehen des Scriptes
 
-[RequireComponent (typeof(SphereCollider))]
+[RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
 
 
@@ -41,8 +41,8 @@ public class PlayerBehaviour : MonoBehaviour
     public Material[] Materials;
     public static int currentMaterials;
 
-//    public Texture[] textures; // Array was die Textures beinhaltet
-//    public int currentTexture; // Über den Wert wird bestimmt welche Texture angezeigt wird
+    //    public Texture[] textures; // Array was die Textures beinhaltet
+    //    public int currentTexture; // Über den Wert wird bestimmt welche Texture angezeigt wird
 
     // Effect wenn Spieler zerstört wird
     public GameObject Explosion;
@@ -80,31 +80,31 @@ public class PlayerBehaviour : MonoBehaviour
         }
         */
         if (!isDead)
-        { 
-        //New Movement 30.11.2020
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        {
+            //New Movement 30.11.2020
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(horizontal, invert * vertical, 0);
-        Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 6.0f);
+            Vector3 direction = new Vector3(horizontal, invert * vertical, 0);
+            Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 6.0f);
 
 
-        transform.position += direction * speed * Time.deltaTime;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
+            transform.position += direction * speed * Time.deltaTime;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
 
-        // Old Movement (29.11.2020)
-        /*
-        float x = Input.GetAxis("Vertical");
-        float z = Input.GetAxis("Horizontal");
+            // Old Movement (29.11.2020)
+            /*
+            float x = Input.GetAxis("Vertical");
+            float z = Input.GetAxis("Horizontal");
 
-        Vector3 move = transform.right * x  + transform.forward * z;
+            Vector3 move = transform.right * x  + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+            controller.Move(move * speed * Time.deltaTime);
 
-        velocity.y += gravity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
-        */
+            controller.Move(velocity * Time.deltaTime);
+            */
         }
 
         if ( /* isDragged &&  */ Time.time > nextFireBullet) //&& !isDead)
@@ -120,7 +120,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
-    public void TakeDamage (int amount)
+    public void TakeDamage(int amount)
     {
         health += amount;
 
@@ -143,7 +143,7 @@ public class PlayerBehaviour : MonoBehaviour
             // Spiele Sound ab
 
             // Spiele Effect ab
-            if(Explosion !=null) //bedeutet wenn der Slot nicht mit einen Prefab gefüllt ist, passiert nichts
+            if (Explosion != null) //bedeutet wenn der Slot nicht mit einen Prefab gefüllt ist, passiert nichts
             {
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
@@ -174,11 +174,11 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.instance.HealingHealth();
     }
 
-    void OnTriggerEnter (Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
+    void OnTriggerEnter(Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
     {
-        if(col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy"))
         {
-           TakeDamage(-1);
+            TakeDamage(-1);
         }
     }
 }
