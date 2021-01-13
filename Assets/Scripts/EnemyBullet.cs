@@ -15,7 +15,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         // zerstöre Kugel nach 9 Sekunden
-        Destroy(gameObject, 9f);
+        Destroy(gameObject, 8f);
     }
 
 
@@ -35,7 +35,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if(col.tag == "Player")
         {
-            col.gameObject.GetComponent<Enemybehavior>().TakeDamage(damage);
+            col.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage);
 
             //Danach zerstöre Geschoss
             Destroy(gameObject);
