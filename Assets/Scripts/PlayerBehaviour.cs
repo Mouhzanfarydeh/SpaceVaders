@@ -105,6 +105,22 @@ public class PlayerBehaviour : MonoBehaviour
             transform.position += direction * speed * Time.deltaTime;
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
 
+            //*************************************** limit position between -150x, 150x
+
+            if (transform.position.x > 150)
+                transform.position = new Vector3(150, transform.position.y, transform.position.z);
+            if (transform.position.x < -150)
+                transform.position = new Vector3(-150, transform.position.y, transform.position.z);
+
+            if (transform.position.y > 40)
+                transform.position = new Vector3(transform.position.x, 40, transform.position.z);
+            if (transform.position.y < -20)
+                transform.position = new Vector3(transform.position.x, -20, transform.position.z);
+
+
+
+
+
             // Old Movement (29.11.2020)
             /*
             float x = Input.GetAxis("Vertical");
