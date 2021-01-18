@@ -24,7 +24,8 @@ public class Rocket : MonoBehaviour
     {
         //Vector3.forward heißt Vorwärts in der Welt bewegen
         //transform.forward heißt bewegt das game object nach vorne
-        transform.Translate(transform.forward * Time.deltaTime * speed);
+       // transform.Translate(transform.forward * Time.deltaTime * speed);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
 

@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    public int damage;
+    public int damage = 1;
     public float speed = 28f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
     void Start()
