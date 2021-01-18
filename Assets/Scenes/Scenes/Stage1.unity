@@ -380,6 +380,8 @@ MonoBehaviour:
   bullet: {fileID: 7791082111917784016, guid: a8f3e96c768d53f41a3b867e81c16612, type: 3}
   Materials: []
   Explosion: {fileID: 0}
+  HitSound: {fileID: 0}
+  Alarm: {fileID: 0}
 --- !u!114 &163792996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9927,6 +9929,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 485056269389558881, guid: 0f27eb8311a616c4fa4e8b013469408c, type: 3}
+      propertyPath: Alarm
+      value: 
+      objectReference: {fileID: 8300000, guid: 8230b3e9eb08ab14b8ca6086d284cf5f, type: 3}
+    - target: {fileID: 485056269389558881, guid: 0f27eb8311a616c4fa4e8b013469408c, type: 3}
       propertyPath: speed
       value: 20
       objectReference: {fileID: 0}
@@ -9942,6 +9948,10 @@ PrefabInstance:
       propertyPath: invert
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 485056269389558881, guid: 0f27eb8311a616c4fa4e8b013469408c, type: 3}
+      propertyPath: HitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b4a94e0d3bf1e74380594e11d92cb57, type: 3}
     - target: {fileID: 485056269389558881, guid: 0f27eb8311a616c4fa4e8b013469408c, type: 3}
       propertyPath: fireRate
       value: 1.3

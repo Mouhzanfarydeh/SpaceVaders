@@ -22,7 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Player Movement
     [Header("Player Movement")]
-    public float speed = 20.0f;  //12f;
+    public float speed = 23.0f;  //12f;
     public float gravity = 0;
     // Vector3 velocity;
     public int invert = 1; // Negative 1 for invert, positive 1 for not
@@ -49,7 +49,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Effect wenn Spieler zerstört wird
     public GameObject Explosion;
-  //  public GameObject WarpEffect;
+    public AudioClip HitSound;
+    public AudioClip Alarm;
+
+    //  public GameObject WarpEffect;
 
     //Resete Spieler
     Vector3 initPosition;
@@ -145,6 +148,8 @@ public class PlayerBehaviour : MonoBehaviour
         // health -= amount;
         health--;
 
+        AudioSource.PlayClipAtPoint(HitSound, transform.position);
+
         currentMaterials++;
         currentMaterials %= Materials.Length;
         GetComponent<Renderer>().material = Materials[currentMaterials];
@@ -152,7 +157,14 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.instance.DecreaseHealth();
         //renderer.material.mainMaterial = Materials[currentMaterials];
 
-        if (health <= 0)
+        if (health == 1)
+        {
+
+            AudioSource.PlayClipAtPoint(Alarm, transform.position);
+
+        }
+
+            if (health <= 0)
         {
 
 
