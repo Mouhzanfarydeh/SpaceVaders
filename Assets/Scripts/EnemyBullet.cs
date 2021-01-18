@@ -25,12 +25,11 @@ public class EnemyBullet : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
   
-
-    // verbunden mit Enemybehavior zeile 100
     public void SetDamage (int amount)
     {
         damage = amount;
     }
+
     void OnTriggerEnter(Collider col)
     {
         if(col.tag == "Player")

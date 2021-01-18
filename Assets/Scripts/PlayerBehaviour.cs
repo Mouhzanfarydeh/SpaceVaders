@@ -10,6 +10,9 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+
+   // public static PlayerBehaviour instance;
+
     // Nur für Maus
 
     /* bool isDragged; */
@@ -46,6 +49,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Effect wenn Spieler zerstört wird
     public GameObject Explosion;
+  //  public GameObject WarpEffect;
 
     //Resete Spieler
     Vector3 initPosition;
@@ -59,6 +63,12 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(-1);
+        }
+        */
         /*
         if (health = 3)
         {
@@ -120,9 +130,20 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
+    /*
+    void OnTriggerEnter(Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            TakeDamage(-1);
+        }
+    }
+    */
+
     public void TakeDamage(int amount)
     {
-        health += amount;
+        // health -= amount;
+        health--;
 
         currentMaterials++;
         currentMaterials %= Materials.Length;
@@ -173,14 +194,15 @@ public class PlayerBehaviour : MonoBehaviour
         health = 3;
         GameManager.instance.HealingHealth();
     }
-
-    void OnTriggerEnter(Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
-    {
-        if (col.CompareTag("Enemy"))
-        {
-            TakeDamage(-1);
-        }
-    }
+    /*
+     public void WarpJump() 
+     {
+         //if (WarpEffect != null) //bedeutet wenn der Slot nicht mit einen Prefab gefüllt ist, passiert nichts
+         //{
+            Instantiate(WarpEffect, transform.position, Quaternion.identity);
+         //}
+     }
+    */
 }
 
 
