@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // wird automatisch auf den Player bezogen beim raufziehen des Scriptes
 
@@ -10,6 +11,11 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+
+    private Scene scene;
+
+    // public static PlayerBehaviour instance;
+
     // Nur für Maus
 
     /* bool isDragged; */
@@ -19,7 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Player Movement
     [Header("Player Movement")]
-    public float speed = 20.0f;  //12f;
+    public float speed = 23.0f;  //12f;
     public float gravity = 0;
     // Vector3 velocity;
     public int invert = 1; // Negative 1 for invert, positive 1 for not
@@ -46,6 +52,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Effect wenn Spieler zerstört wird
     public GameObject Explosion;
+    public AudioClip HitSound;
+    public AudioClip Alarm;
+
+    //  public GameObject WarpEffect;
 
     //Resete Spieler
     Vector3 initPosition;
@@ -54,11 +64,29 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         initPosition = transform.position; //Position an der das Schiff resetet wird
+
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Stage1")
+        {
+            health = 3;
+            Life = 3;
+
+        }
+
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(-1);
+        }
+        */
         /*
         if (health = 3)
         {
@@ -92,6 +120,22 @@ public class PlayerBehaviour : MonoBehaviour
             transform.position += direction * speed * Time.deltaTime;
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
 
+            //*************************************** limit position between -150x, 150x
+
+            if (transform.position.x > 150)
+                transform.position = new Vector3(150, transform.position.y, transform.position.z);
+            if (transform.position.x < -150)
+                transform.position = new Vector3(-150, transform.position.y, transform.position.z);
+
+            if (transform.position.y > 40)
+                transform.position = new Vector3(transform.position.x, 40, transform.position.z);
+            if (transform.position.y < -20)
+                transform.position = new Vector3(transform.position.x, -20, transform.position.z);
+
+
+
+
+
             // Old Movement (29.11.2020)
             /*
             float x = Input.GetAxis("Vertical");
@@ -120,9 +164,22 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
+    /*
+    void OnTriggerEnter(Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            TakeDamage(-1);
+        }
+    }
+    */
+
     public void TakeDamage(int amount)
     {
-        health += amount;
+        // health -= amount;
+        health--;
+
+        AudioSource.PlayClipAtPoint(HitSound, transform.position);
 
         currentMaterials++;
         currentMaterials %= Materials.Length;
@@ -131,8 +188,15 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.instance.DecreaseHealth();
         //renderer.material.mainMaterial = Materials[currentMaterials];
 
-        if (health <= 0)
+        if (health == 1)
         {
+
+            AudioSource.PlayClipAtPoint(Alarm, transform.position);
+
+        }
+
+            if (health <= 0)
+            {
 
 
 
@@ -148,11 +212,11 @@ public class PlayerBehaviour : MonoBehaviour
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
-            // Zerstöre Spieler
-            //Destroy(gameObject);
-            StartCoroutine(Reset());
+              // Zerstöre Spieler
+              //Destroy(gameObject);
+               StartCoroutine(Reset());
 
-        }
+            }
     }
 
     IEnumerator Reset() //Koroutine
@@ -174,13 +238,15 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.instance.HealingHealth();
     }
 
-    void OnTriggerEnter(Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
-    {
-        if (col.CompareTag("Enemy"))
-        {
-            TakeDamage(-1);
-        }
-    }
+    /*
+     public void WarpJump() 
+     {
+         //if (WarpEffect != null) //bedeutet wenn der Slot nicht mit einen Prefab gefüllt ist, passiert nichts
+         //{
+            Instantiate(WarpEffect, transform.position, Quaternion.identity);
+         //}
+     }
+    */
 }
 
 

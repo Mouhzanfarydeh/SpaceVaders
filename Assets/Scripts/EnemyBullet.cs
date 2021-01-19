@@ -12,6 +12,8 @@ public class EnemyBullet : MonoBehaviour
     public int damage;
     public float speed = 25f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
+   // public AudioClip deathClip;
+
     void Start()
     {
         // zerstöre Kugel nach 9 Sekunden
@@ -25,17 +27,20 @@ public class EnemyBullet : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
   
-
-    // verbunden mit Enemybehavior zeile 100
     public void SetDamage (int amount)
     {
         damage = amount;
     }
+
     void OnTriggerEnter(Collider col)
     {
         if(col.tag == "Player")
         {
             col.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage);
+
+            // Spiele Sound ab
+            //AudioSource.deathClip.Play();
+           // AudioSource.PlayClipAtPoint(deathClip, transform.position);
 
             //Danach zerstöre Geschoss
             Destroy(gameObject);

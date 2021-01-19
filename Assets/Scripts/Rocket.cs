@@ -10,7 +10,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     public int damage;
-    public float speed = 10f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
+    public float speed = 20f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
     // zerstöre Rakete nach 10 Sekunden
     void Start()
@@ -25,6 +25,7 @@ public class Rocket : MonoBehaviour
         //Vector3.forward heißt Vorwärts in der Welt bewegen
         //transform.forward heißt bewegt das game object nach vorne
         transform.Translate(transform.forward * Time.deltaTime * speed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
 

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public GameObject Warpeffect;
+
+    private Scene scene;
 
     //private int nextSceneToLoad;
 
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this; //sichgehen das Game Manager existiert
 
+
         //Reset der Level
         if (hasLost)
         {
@@ -62,13 +66,53 @@ public class GameManager : MonoBehaviour
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1);
     }
    */
-    void Start()
+    /*
+    void Update()
     {
+
         UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
         UiScript.instance.ShowStageText(level);
         UiScript.instance.UpdateRocketText(rocket);
         UiScript.instance.UpdateHealthText(health);
+    }
+    */
+
+    void Start()
+    {
+
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Stage1")
+        { 
+
+        level = 1;
+        score = 0;
+        lifes = 3;
+        rocket = 3;
+        health = 3;
+        bonusScore = 0;
+
+        }
+    /*
+    level = 1;
+    score = 0;
+    lifes = 3;
+    rocket = 3;
+    health = 3;
+    bonusScore = 0;
+    */
+
+
+        UiScript.instance.UpdateScoreText(score);
+        UiScript.instance.UpdateLifeText(lifes);
+        UiScript.instance.ShowStageText(level);
+        UiScript.instance.UpdateRocketText(rocket);
+        UiScript.instance.UpdateHealthText(health);
+        
+
+        Warpeffect.SetActive(false);
+        //GetComponent<Warp>();
+
     }
 
     public void AddScore(int amount)
@@ -112,8 +156,8 @@ public class GameManager : MonoBehaviour
         */
     }
 
-   public void DecreaseRockets()
-    {      
+    public void DecreaseRockets()
+    {
         rocket--;
 
         UiScript.instance.UpdateRocketText(rocket);
@@ -125,38 +169,130 @@ public class GameManager : MonoBehaviour
 
         UiScript.instance.UpdateLifeText(lifes);
 
-        if (lifes <=0)
+        if (lifes <= 0)
         {
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
             ScoreHolder.score = score;
             hasLost = true;
             SceneManager.LoadScene("GameOver");
+            //Invoke("LoadEnd", 5f);
         }
     }
 
-    //Wird erhöht wenn Gegner erscheint
-    
+    /*
+    void LoadEnd()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+    */
+        //Wird erhöht wenn Gegner erscheint
+
     public void AddEnemy()
     {
         enemyAmount++;
     }
 
+    /*
+    IEnumerator Waitamoment() //Koroutine
+    {
+        // Gibt die Zeit aus, zu der die Funktion zum ersten Mal aufgerufen wird.
+        Debug.Log(" Coroutine zum Zeitstempel gestartet :" + Time.time);
+
+        yield return new WaitForSeconds(5); //warte 5 sekunden ab bevor nächste stage lädt
+
+        // Nachdem wir 5 Sekunden gewartet haben, drucke die Zeit erneut.
+        Debug.Log("Fertige Coroutine zum Zeitstempel:" + Time.time);
+
+    }
+    */
     //Wird gesenkt wenn Gegner verschwindet
     public void ReduceEnemy()
     {
         enemyAmount--;
-        if (enemyAmount <= 0)
+        if (enemyAmount <= 0) // Prüfung der Siegesbedingungen
         {
             ScoreHolder.score = score;
-            // Prüfung der Siegesbedingungen
-            level++;
-         //SceneManager.LoadScene("Stage2");
-         //SceneManager.LoadScene(nextSceneToLoad);
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            Warpeffect.SetActive(true);
+            //gameObject.SetActive(true);
+            //Instantiate(WarpEffect, transform.position, Quaternion.identity);
+
+            // else
+            //   {
+            // gameObject.SetActive(false);
+            //  }
+            //  }
+
+           
+
+
+
+
+
+
+
+
+
+            // GameObject LetsJump;
+
+            //  LetsJump = GameObject.Find("Warp");
+            // Jump = true;
+
+
+            // Warpjump = GetComponent<Warp>();
+            //PlayerBehaviour = WarpEffect.GetComponent<Warp>();
+
+
+
+            //gameObject.SetActive(true);
+
+
+            //ScriptA.X = true;
+            //Warp.Jump = true;
+
+            //    if (Warp.Jump)
+            //    {
+            //  Jump = true;
+            //   }
+
+
+
+
+
+
+            //PlayerBehaviour = WarpEffect.GetComponent<PlayerBehaviour>();
+            // GetComponent<Renderer>().material = Materials[currentMaterials];
+
+            // StartCoroutine(WarpJump());
+            /*
+            void WarpJump()
+            {
+                if (WarpEffect != null) //bedeutet wenn der Slot nicht mit einen Prefab gefüllt ist, passiert nichts
+                {
+                   Instantiate(WarpEffect, transform.position, Quaternion.identity);
+                }
+            }
+            */
+            //Invoke("WarpJump", 1f); //Zeitstempel funktionieren nicht weil es erst bei der nächsten aktualisierung ausgeübt wird
+
+            // Debug.Log("Fertige Coroutine zum Zeitstempel:" + Time.time);
+            // UiScript.instance.UpdateRocketText(rocket);
+            // PlayerBehaviour.instance.WarpJump();
+
+            Invoke("LoadNextScene", 5f);
+            //level++;
+
+            //SceneManager.LoadScene("Stage2");
+            //SceneManager.LoadScene(nextSceneToLoad);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
 
-
+    void LoadNextScene()
+    {
+        level++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     /*
     public void WinCondition()
@@ -168,4 +304,5 @@ public class GameManager : MonoBehaviour
          SceneManager.LoadScene("Stage2"); // hier nächste level hinzufügen
     }
     */
+
 }

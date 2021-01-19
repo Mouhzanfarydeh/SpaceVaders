@@ -163,7 +163,7 @@ public class Formation : MonoBehaviour
                     // gewollte position des obj und jetzige Position des obj berechnen
                     Vector3 vec = new Vector3(this.transform.position.x + x, this.transform.position.y + y, this.transform.position.z + z); //erstellt netz aus x,y,z
                 // Visualisieren des Gitternetz
-               // Handles.Label(vec, num.ToString()); //---------------------------------------------------------------------------------etwas verbuggt beim exe erstellen einfach ausklammern
+               Handles.Label(vec, num.ToString()); //---------------------------------------------------------------------------------etwas verbuggt beim exe erstellen einfach ausklammern
                 num++;
                     // füllen der Liste mit den Positionen von jeden Feld
                     gridList.Add(vec);
