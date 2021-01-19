@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Rocketperspace : MonoBehaviour
 {
+    private Scene scene;
+
     Vector3 screenPoint;
     Vector3 offset;
 
@@ -19,6 +21,17 @@ public class Rocketperspace : MonoBehaviour
     int rocketDamage = 3; // Später noch anpassbar
     public double RocketfireRate = 1; // Später noch anpassbar
     public GameObject rocket;
+
+    void start()
+    { 
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Stage1")
+        {
+
+            rocketsleft = 3;
+
+        }
+    }
 
     // Update is called once per frame
     void Update()

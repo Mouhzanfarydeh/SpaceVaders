@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameObject Warpeffect;   
+    public GameObject Warpeffect;
+
+    private Scene scene;
 
     //private int nextSceneToLoad;
 
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this; //sichgehen das Game Manager existiert
 
+
         //Reset der Level
         if (hasLost)
         {
@@ -64,15 +66,51 @@ public class GameManager : MonoBehaviour
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1);
     }
    */
-    void Start()
+    /*
+    void Update()
     {
+
         UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
         UiScript.instance.ShowStageText(level);
         UiScript.instance.UpdateRocketText(rocket);
         UiScript.instance.UpdateHealthText(health);
+    }
+    */
 
-         Warpeffect.SetActive(false);
+    void Start()
+    {
+
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Stage1")
+        { 
+
+        level = 1;
+        score = 0;
+        lifes = 3;
+        rocket = 3;
+        health = 3;
+        bonusScore = 0;
+
+        }
+    /*
+    level = 1;
+    score = 0;
+    lifes = 3;
+    rocket = 3;
+    health = 3;
+    bonusScore = 0;
+    */
+
+
+        UiScript.instance.UpdateScoreText(score);
+        UiScript.instance.UpdateLifeText(lifes);
+        UiScript.instance.ShowStageText(level);
+        UiScript.instance.UpdateRocketText(rocket);
+        UiScript.instance.UpdateHealthText(health);
+        
+
+        Warpeffect.SetActive(false);
         //GetComponent<Warp>();
 
     }
@@ -266,4 +304,5 @@ public class GameManager : MonoBehaviour
          SceneManager.LoadScene("Stage2"); // hier nächste level hinzufügen
     }
     */
+
 }

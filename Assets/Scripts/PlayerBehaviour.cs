@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // wird automatisch auf den Player bezogen beim raufziehen des Scriptes
 
@@ -11,7 +12,9 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
 
-   // public static PlayerBehaviour instance;
+    private Scene scene;
+
+    // public static PlayerBehaviour instance;
 
     // Nur für Maus
 
@@ -61,6 +64,18 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         initPosition = transform.position; //Position an der das Schiff resetet wird
+
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Stage1")
+        {
+            health = 3;
+            Life = 3;
+
+        }
+
+
+
+
     }
 
     // Update is called once per frame
@@ -181,7 +196,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
             if (health <= 0)
-        {
+            {
 
 
 
@@ -197,11 +212,11 @@ public class PlayerBehaviour : MonoBehaviour
                 Instantiate(Explosion, transform.position, Quaternion.identity);
             }
 
-            // Zerstöre Spieler
-            //Destroy(gameObject);
-            StartCoroutine(Reset());
+              // Zerstöre Spieler
+              //Destroy(gameObject);
+               StartCoroutine(Reset());
 
-        }
+            }
     }
 
     IEnumerator Reset() //Koroutine
@@ -222,6 +237,7 @@ public class PlayerBehaviour : MonoBehaviour
         health = 3;
         GameManager.instance.HealingHealth();
     }
+
     /*
      public void WarpJump() 
      {
