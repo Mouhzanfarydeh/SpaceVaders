@@ -36,11 +36,15 @@ public class PlayerBullet : MonoBehaviour
         if(col.tag == "Enemy")
         {
             col.gameObject.GetComponent<Enemybehavior>().TakeDamage(damage);
-
-            // col.gameObject.GetComponent<EnemyBlueshell>().TakeDamage(damage);
-
-            //Danach zerstöre Geschoss
-            Destroy(gameObject);
         }
+
+        if(col.tag == "Mine")
+        {
+           col.gameObject.GetComponent<EnemyBlueshell>().TakeDamage(damage);
+        }
+       
+       //Danach zerstöre Geschoss
+        Destroy(gameObject);
+        
     }
 }

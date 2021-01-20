@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Rahmen
+  - Mine
   layers:
   - Default
   - TransparentFX

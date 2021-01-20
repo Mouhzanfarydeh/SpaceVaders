@@ -39,9 +39,16 @@ public class Rocket : MonoBehaviour
         if (col.tag == "Enemy")
         {
             col.gameObject.GetComponent<Enemybehavior>().TakeDamage(damage);
-
-            //Danach zerstöre Geschoss
-            Destroy(gameObject);
         }
+
+        if (col.tag == "Mine")
+        {
+           col.gameObject.GetComponent<EnemyBlueshell>().TakeDamage(damage);
+        }
+
+        //Danach zerstöre Geschoss
+        Destroy(gameObject);
+
+        
     }
 }

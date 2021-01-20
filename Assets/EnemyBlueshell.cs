@@ -19,22 +19,20 @@ public class EnemyBlueshell : MonoBehaviour
 
 
     public GameObject Explosion;
-    public float reachDistance = 0.4f;
     public int damage = 1;
-    float distance;
     public int health = 1;
     public int Score;
 
 
         void Start()
         {
-             Destroy(gameObject, 50f);
-
-
 
             rb = GetComponent<Rigidbody>();
 
             target = GameObject.FindGameObjectWithTag("Player").transform;
+
+            Destroy(gameObject, 20f);
+
 
         }
 
@@ -76,12 +74,15 @@ public class EnemyBlueshell : MonoBehaviour
             {
                 col.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage);
 
-                // Spiele Sound ab
-                //AudioSource.deathClip.Play();
-                // AudioSource.PlayClipAtPoint(deathClip, transform.position);
-
-                //Danach zerstöre Geschoss
-                Destroy(gameObject);
+            // Spiele Sound ab
+            //AudioSource.deathClip.Play();
+            // AudioSource.PlayClipAtPoint(deathClip, transform.position);
+            if (Explosion != null)
+            {
+                Instantiate(Explosion, transform.position, Quaternion.identity);
+            }
+            //Danach zerstöre Geschoss
+            Destroy(gameObject);
             }
         }
     
