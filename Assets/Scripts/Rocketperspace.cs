@@ -22,7 +22,7 @@ public class Rocketperspace : MonoBehaviour
     public double RocketfireRate = 1; // Später noch anpassbar
     public GameObject rocket;
 
-    void start()
+    void Start()
     { 
         scene = SceneManager.GetActiveScene();
         if (scene.name == "Stage1")
@@ -37,10 +37,11 @@ public class Rocketperspace : MonoBehaviour
     void Update()
     {
         // Rakete per leertaste schießen
-        if (Input.GetKeyDown("space") && rocketsleft > 0) // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
+        if (rocketsleft > 0 && Input.GetKeyDown("space")) // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
         {
             GameManager.instance.DecreaseRockets();
 
+           // rocketsleft -= 1;
             rocketsleft--;
             nextFireRocket = Time.time + RocketfireRate;
             for (int i = 0; i < rocketLevel; i++)
@@ -49,6 +50,10 @@ public class Rocketperspace : MonoBehaviour
                 // Bringt der Rakete Schaden
                 newRocket.GetComponent<Rocket>().SetDamage(rocketDamage);
             }
+        }
+        else
+        {
+            Debug.Log("Raketen leer");
         }
     }
 
