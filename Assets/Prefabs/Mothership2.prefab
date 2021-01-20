@@ -58,7 +58,7 @@ MonoBehaviour:
   enemyID: 0
   formation: {fileID: 0}
   Explosion: {fileID: 8139239117761683310, guid: e4accc60ebcd9a8478d2a33ddddae7ed, type: 3}
-  health: 100
+  health: 150
   Score: 10000
 --- !u!54 &4050751196730075045
 Rigidbody:

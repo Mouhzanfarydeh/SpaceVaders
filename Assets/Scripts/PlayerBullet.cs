@@ -37,6 +37,8 @@ public class PlayerBullet : MonoBehaviour
         {
             col.gameObject.GetComponent<Enemybehavior>().TakeDamage(damage);
 
+            // col.gameObject.GetComponent<EnemyBlueshell>().TakeDamage(damage);
+
             //Danach zerstöre Geschoss
             Destroy(gameObject);
         }

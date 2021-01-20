@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 1367914464856156368}
   - component: {fileID: 947166740486467575}
   m_Layer: 0
-  m_Name: Mothership1 1
+  m_Name: Mothership
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
