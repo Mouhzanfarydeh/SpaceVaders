@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    public int damage;
+    public int damage = 30;
     public float speed = 20f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
 
     // zerstöre Rakete nach 10 Sekunden

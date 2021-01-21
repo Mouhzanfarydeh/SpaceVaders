@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1872385699213031319, guid: fa76b2fa84f07af48bd88c1e2f8e85e0, type: 3}
+      propertyPath: reachDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2304102635169349041, guid: fa76b2fa84f07af48bd88c1e2f8e85e0, type: 3}
       propertyPath: m_Name
       value: Virus Paul Variant
