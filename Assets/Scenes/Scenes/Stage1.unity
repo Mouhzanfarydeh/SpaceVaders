@@ -366,12 +366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424c4ea8aad07ca4a98b5a30151fe6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   gravity: 0
   invert: -1
   bulletSpawns:
   - {fileID: 1999729913}
-  fireRate: 0.5
   bullet: {fileID: 7791082111917784016, guid: a8f3e96c768d53f41a3b867e81c16612, type: 3}
   Materials: []
   Explosion: {fileID: 0}
@@ -437,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnInterval: 1
-  waveSpawnInterval: 15
+  waveSpawnInterval: 10
   VirusPrefab: {fileID: 6317174164670426214, guid: 1e3237ab1a2ad6b4298221735e780551, type: 3}
   Enemy2Prefab: {fileID: 0}
   BossPrefab: {fileID: 0}
@@ -450,12 +448,12 @@ MonoBehaviour:
     BossAmount: 0
     pathPrefabs:
     - {fileID: 833228747590913469, guid: 43099c74c1f1a424cafc799538203514, type: 3}
-  - VirusAmount: 3
+  - VirusAmount: 4
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
     - {fileID: 7933706848004190843, guid: 0c10057b5fb354d4c88b845ce30bd25c, type: 3}
-  - VirusAmount: 3
+  - VirusAmount: 4
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
@@ -5597,6 +5595,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: speed
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 2371787248423528849, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Target
       value: 

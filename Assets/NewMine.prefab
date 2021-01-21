@@ -80,8 +80,7 @@ MonoBehaviour:
   speed: 15
   rotateSpeed: 200
   MoveSpeed5: 1
-  Explosion: {fileID: 8139239117761683310, guid: e4accc60ebcd9a8478d2a33ddddae7ed, type: 3}
-  reachDistance: 0.4
+  Explosion: {fileID: 2914309373149034468, guid: 8bc67bca5dac56b44a5373121652b621, type: 3}
   damage: 1
   health: 1
   Score: 0

@@ -7,15 +7,11 @@ public class EnemyBlueshell : MonoBehaviour
 
         Rigidbody rb;
 
-        public float speed = 12f;
+        public float speed = 0f; //12f ---> 29f
 
         private Transform target;
 
-        public float rotateSpeed = 1f;
-
-
-
-        public float MoveSpeed5 = 1f;
+        public float rotateSpeed = 0f;
 
 
     public GameObject Explosion;
@@ -31,7 +27,7 @@ public class EnemyBlueshell : MonoBehaviour
 
             target = GameObject.FindGameObjectWithTag("Player").transform;
 
-            Destroy(gameObject, 20f);
+            Destroy(gameObject, 22f); // 20f ---> 22f
 
 
         }

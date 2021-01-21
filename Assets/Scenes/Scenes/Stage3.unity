@@ -366,12 +366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424c4ea8aad07ca4a98b5a30151fe6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   gravity: 0
   invert: -1
   bulletSpawns:
   - {fileID: 1999729913}
-  fireRate: 0.5
   bullet: {fileID: 7791082111917784016, guid: a8f3e96c768d53f41a3b867e81c16612, type: 3}
   Materials: []
   Explosion: {fileID: 0}
@@ -445,17 +443,17 @@ MonoBehaviour:
   Enemy2Formation: {fileID: 0}
   BossFormation: {fileID: 0}
   waveList:
-  - VirusAmount: 3
+  - VirusAmount: 5
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
     - {fileID: 532936974037765931, guid: 3bbddcd869f240e4ea09ec2e16de0282, type: 3}
-  - VirusAmount: 3
+  - VirusAmount: 5
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
     - {fileID: 3957785842269172290, guid: f8dd9396f976d9340ad8edfe3c2d7596, type: 3}
-  - VirusAmount: 6
+  - VirusAmount: 10
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:

@@ -25,7 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Player Movement
     [Header("Player Movement")]
-    public float speed = 23.0f;  //12f;
+    float speed = 27.2f;  // 23.0f ---> 27.2.0f
     public float gravity = 0;
     // Vector3 velocity;
     public int invert = 1; // Negative 1 for invert, positive 1 for not
@@ -36,7 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
     double nextFireBullet;
     int bulletLevel = 1; // Anzahl der Schüsse, später noch anpassbar
     int bulletDamage = 1; // Später noch anpassbar
-    public double fireRate = 0.5; // Später noch anpassbar
+    double fireRate = 0.488; // Später noch anpassbar 0.5 ---> 0.48
     public GameObject bullet;
 
     [Header("Player")]

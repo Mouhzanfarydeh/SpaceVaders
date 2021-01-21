@@ -37,7 +37,7 @@ public class Rocketperspace : MonoBehaviour
     void Update()
     {
         // Rakete per leertaste schießen
-        if (rocketsleft > 0 && Input.GetKeyDown("space")) // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
+        if (Input.GetKeyDown("space") && rocketsleft > 0) // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
         {
             GameManager.instance.DecreaseRockets();
 
@@ -51,10 +51,10 @@ public class Rocketperspace : MonoBehaviour
                 newRocket.GetComponent<Rocket>().SetDamage(rocketDamage);
             }
         }
-        else
-        {
-            Debug.Log("Raketen leer");
-        }
+      //  else
+      //  {
+       //     Debug.Log("Raketen leer");
+       // }
     }
 
     /*
