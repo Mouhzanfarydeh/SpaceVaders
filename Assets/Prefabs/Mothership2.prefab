@@ -129,15 +129,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathToFollow: {fileID: 0}
   currentWayPointID: 0
-  speed: 100
+  speed: 40
   reachDistance: 0.4
   rotationSpeed: 5
-  useBezier: 1
+  useBezier: 0
   enemyState: 0
   enemyID: 0
   formation: {fileID: 0}
   Explosion: {fileID: 1614365948449302937, guid: 67fb249533142fc49880a4887ec714e9, type: 3}
-  health: 150
+  health: 200
   Score: 10000
 --- !u!54 &4050751196730075045
 Rigidbody:

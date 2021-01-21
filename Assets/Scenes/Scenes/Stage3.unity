@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: c70fae059b8877345b119b78bcd4dce7, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1b7e4697e152f924da0051fce36b28eb, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -445,20 +445,21 @@ MonoBehaviour:
   Enemy2Formation: {fileID: 0}
   BossFormation: {fileID: 0}
   waveList:
-  - VirusAmount: 1
+  - VirusAmount: 3
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
-    - {fileID: 833228747590913469, guid: 43099c74c1f1a424cafc799538203514, type: 3}
+    - {fileID: 532936974037765931, guid: 3bbddcd869f240e4ea09ec2e16de0282, type: 3}
   - VirusAmount: 3
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 3957785842269172290, guid: f8dd9396f976d9340ad8edfe3c2d7596, type: 3}
+  - VirusAmount: 6
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
     - {fileID: 7933706848004190843, guid: 0c10057b5fb354d4c88b845ce30bd25c, type: 3}
-  - VirusAmount: 3
-    Enemy2Amount: 0
-    BossAmount: 0
-    pathPrefabs:
     - {fileID: 2025515549000302067, guid: c4cadda517ef1e44fb982971426dd52f, type: 3}
   spawnedEnemies: []
 --- !u!1 &197617541
@@ -2351,7 +2352,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c29c2c2e785e87f41bcd74db13415d37, type: 2}
-  m_audioClip: {fileID: 8300000, guid: fbaad099efa7d48418535061ca85d63c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dd3cf27eb310c5344b88a90f9312d873, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
