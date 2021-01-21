@@ -13,6 +13,8 @@ public float speed = 2;
 public float reachDistance = 0.4f;
 public float rotationSpeed = 5f;
 
+    public float detonationTimer = 0f;
+
     float distance; // Distanz zum nächsten Wegpunkt
     // für zickzack movement (use Bezier Path and not pass points)
     public bool useBezier = false;
@@ -205,7 +207,7 @@ public float rotationSpeed = 5f;
             }
 
             // Zerstöre Gegner
-            Destroy(gameObject);
+            Destroy(gameObject, detonationTimer);
 
             // weitergeben an Spawn Manager
             // SpawnManager sp = GameObject.Find("SpawnManager").GetComponent<SpawnManager>(); // ----------------------------------------------- noch verbuggt
