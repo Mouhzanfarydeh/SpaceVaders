@@ -9638,6 +9638,7 @@ GameObject:
   - component: {fileID: 793566579692874995}
   - component: {fileID: 4774513921580873268}
   - component: {fileID: 8064300872958205776}
+  - component: {fileID: 1236842005769858526}
   m_Layer: 0
   m_Name: new Rocket Variant
   m_TagString: Untagged
@@ -9748,13 +9749,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505390133874765632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10dd5beb9a5a396478665ca5ac33e3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
   speed: -200
+--- !u!114 &1236842005769858526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505390133874765632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc50f33e674d0a44a2d52902b4a9ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 5030120244569343363, guid: b990ecb6bdafae946811a6a588cc2901, type: 3}
+  damage: 20
+  speed: -200
+  AOE: {fileID: 195263498062246024, guid: f53ff552667e448459cb56d29555d387, type: 3}
 --- !u!1 &1505390134274986885
 GameObject:
   m_ObjectHideFlags: 0
@@ -9831,7 +9848,7 @@ SphereCollider:
   m_GameObject: {fileID: 9219164784711208889}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

@@ -16,9 +16,9 @@ public class AOE : MonoBehaviour
     {
         temp = transform.localScale;
 
-        temp.x += Time.deltaTime* 300f;
-        temp.y += Time.deltaTime* 300f;
-        temp.z += Time.deltaTime* 300f;
+        temp.x += Time.deltaTime* 150f;
+        temp.y += Time.deltaTime* 150f;
+        temp.z += Time.deltaTime* 150f;
 
         transform.localScale = temp;
     }

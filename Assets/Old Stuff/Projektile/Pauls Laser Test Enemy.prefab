@@ -44,7 +44,7 @@ SphereCollider:
   m_GameObject: {fileID: 6338304298773958739}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -78,7 +78,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 25
-  deathClip: {fileID: 8300000, guid: 9b4a94e0d3bf1e74380594e11d92cb57, type: 3}
 --- !u!82 &8943740403082944078
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5048,4 +5047,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: -100
-  deathClip: {fileID: 0}

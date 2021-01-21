@@ -5505,6 +5505,7 @@ MonoBehaviour:
   speed: 10
   reachDistance: 0.4
   rotationSpeed: 5
+  detonationTimer: 0
   useBezier: 0
   enemyState: 0
   enemyID: 0
@@ -5632,6 +5633,10 @@ PrefabInstance:
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: speed
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2371787248423528849, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Target

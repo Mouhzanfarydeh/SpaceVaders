@@ -47,7 +47,7 @@ public class Rocket : MonoBehaviour
         }
 
         //Danach zerstöre Geschoss
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
         
     }

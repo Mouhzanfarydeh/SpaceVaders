@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class AOE_Rocket : MonoBehaviour
 {
+    public GameObject Explosion;
     public int damage;
     public float speed = 20f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
     public GameObject AOE;
@@ -39,13 +40,15 @@ public class AOE_Rocket : MonoBehaviour
     {
         if (col.tag == "Enemy")
         {
-            Instantiate(AOE);
+            Instantiate(AOE, transform.position, transform.rotation);
+            Instantiate(Explosion, transform.position, transform.rotation);
             //col.gameObject.GetComponent<Enemybehavior>().TakeDamage(damage);
         }
 
         if (col.tag == "Mine")
         {
-            Instantiate(AOE);
+            Instantiate(AOE, transform.position, transform.rotation);
+            Instantiate(Explosion, transform.position, transform.rotation);
             //col.gameObject.GetComponent<EnemyBlueshell>().TakeDamage(damage);
         }
 
