@@ -5506,6 +5506,7 @@ MonoBehaviour:
   speed: 10
   reachDistance: 0.4
   rotationSpeed: 5
+  detonationTimer: 0
   useBezier: 0
   enemyState: 0
   enemyID: 0
