@@ -36,7 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
     double nextFireBullet;
     int bulletLevel = 1; // Anzahl der Schüsse, später noch anpassbar
     int bulletDamage = 1; // Später noch anpassbar
-    double fireRate = 0.488; // Später noch anpassbar 0.5 ---> 0.48
+    double fireRate = 0.489; // Später noch anpassbar 0.5 ---> 0.489
     public GameObject bullet;
 
     [Header("Player")]
@@ -46,6 +46,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public Material[] Materials;
     public static int currentMaterials;
+
+    public GameObject Rauchbei1Schaden;
+    public GameObject Rauchbei2Schaden;
 
     //    public Texture[] textures; // Array was die Textures beinhaltet
     //    public int currentTexture; // Über den Wert wird bestimmt welche Texture angezeigt wird
@@ -73,14 +76,33 @@ public class PlayerBehaviour : MonoBehaviour
 
         }
 
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (health == 3)
+        {
+            Rauchbei1Schaden.SetActive(false);
+            Rauchbei2Schaden.SetActive(false);
+        }
+
+        if (health == 2)
+        {
+            Rauchbei1Schaden.SetActive(true);
+            Rauchbei2Schaden.SetActive(false);
+        }
+
+        if (health == 1)
+        {
+            Rauchbei1Schaden.SetActive(false);
+            Rauchbei2Schaden.SetActive(true);
+        }
+
+
+
+
+
         /*
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -185,6 +207,9 @@ public class PlayerBehaviour : MonoBehaviour
         currentMaterials++;
         currentMaterials %= Materials.Length;
         GetComponent<Renderer>().material = Materials[currentMaterials];
+
+
+
 
         GameManager.instance.DecreaseHealth();
         //renderer.material.mainMaterial = Materials[currentMaterials];
