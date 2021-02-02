@@ -11,7 +11,7 @@ public class EnemyBullet : MonoBehaviour
 {
     public int damage;
     public float speed = 25f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
-
+    bool applyDamage;
    // public AudioClip deathClip;
 
     void Start()
@@ -29,13 +29,15 @@ public class EnemyBullet : MonoBehaviour
   
     public void SetDamage (int amount)
     {
-        damage = amount;
+        damage -= amount;
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Player")
+        if(!applyDamage && col.tag == "Player")
         {
+            applyDamage = true;
+
             col.gameObject.GetComponent<PlayerBehaviour>().TakeDamage(damage);
 
             // Spiele Sound ab
@@ -43,7 +45,10 @@ public class EnemyBullet : MonoBehaviour
            // AudioSource.PlayClipAtPoint(deathClip, transform.position);
 
             //Danach zerstöre Geschoss
+
             Destroy(gameObject);
+            
+            return;
         }
     }
 }

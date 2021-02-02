@@ -19,12 +19,12 @@ public class GameOver : MonoBehaviour
     {
         if(Input.GetMouseButton(0)) //der erste klick der Maus
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Menu Jul");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Menu Jul");
         }
     }
 }
