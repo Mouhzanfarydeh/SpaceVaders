@@ -17,7 +17,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         // zerstöre Kugel nach 9 Sekunden
-        Destroy(gameObject, 8f);
+        Destroy(gameObject, 2.7f);
     }
 
 
