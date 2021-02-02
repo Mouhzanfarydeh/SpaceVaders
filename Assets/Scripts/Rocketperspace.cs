@@ -27,10 +27,24 @@ public class Rocketperspace : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         if (scene.name == "Stage1")
         {
-
             rocketsleft = 3;
-
         }
+        if (scene.name == "Stage2")
+        {
+            rocketsleft++;
+            rocketsleft++;
+            rocketsleft++;
+        }
+        if (scene.name == "Stage3")
+        {
+            rocketsleft++;
+            rocketsleft++;
+            rocketsleft++;
+        }
+
+
+
+
     }
 
     // Update is called once per frame

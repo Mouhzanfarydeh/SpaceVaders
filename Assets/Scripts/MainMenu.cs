@@ -40,10 +40,15 @@ public class MainMenu : MonoBehaviour
         //Application.LoadLevel(Application.loadedlevel);
     }
 
-    public void QuitGame ()
+    public void QuitGame()
     {
         Debug.Log("QUIT!");
             Application.Quit();
     }
 
+    public void Cedits()
+    {
+        SceneManager.LoadScene("Credits");
+
+    }
 }

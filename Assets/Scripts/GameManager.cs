@@ -66,17 +66,17 @@ public class GameManager : MonoBehaviour
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1);
     }
    */
-    /*
+    
     void Update()
     {
 
-        UiScript.instance.UpdateScoreText(score);
+     // UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
-        UiScript.instance.ShowStageText(level);
+     // UiScript.instance.ShowStageText(level);
         UiScript.instance.UpdateRocketText(rocket);
         UiScript.instance.UpdateHealthText(health);
     }
-    */
+    
 
     void Start()
     {
@@ -137,8 +137,9 @@ public class GameManager : MonoBehaviour
         health++;
         health++;
         health++;
-
+        
         UiScript.instance.UpdateHealthText(health);
+        return;
 
     }
 
@@ -215,6 +216,11 @@ public class GameManager : MonoBehaviour
             ScoreHolder.score = score;
 
             Warpeffect.SetActive(true);
+
+            rocket++;
+            rocket++;
+            rocket++;
+
             //gameObject.SetActive(true);
             //Instantiate(WarpEffect, transform.position, Quaternion.identity);
 
@@ -224,7 +230,7 @@ public class GameManager : MonoBehaviour
             //  }
             //  }
 
-           
+
 
 
 

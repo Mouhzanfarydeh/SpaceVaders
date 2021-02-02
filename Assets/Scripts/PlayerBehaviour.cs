@@ -85,18 +85,27 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Rauchbei1Schaden.SetActive(false);
             Rauchbei2Schaden.SetActive(false);
+
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
         if (health == 2)
         {
             Rauchbei1Schaden.SetActive(true);
             Rauchbei2Schaden.SetActive(false);
+
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
         if (health == 1)
         {
             Rauchbei1Schaden.SetActive(false);
             Rauchbei2Schaden.SetActive(true);
+
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
 
