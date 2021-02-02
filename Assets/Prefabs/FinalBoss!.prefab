@@ -90,6 +90,12 @@ GameObject:
   - component: {fileID: 6606184738503918076}
   - component: {fileID: 8157054022697683177}
   - component: {fileID: 4858430753239787858}
+  - component: {fileID: 1621052027295959056}
+  - component: {fileID: 3580486070928164986}
+  - component: {fileID: 2901880727530881219}
+  - component: {fileID: 7357883044867958657}
+  - component: {fileID: 2029264051998297920}
+  - component: {fileID: 2484186603707433291}
   m_Layer: 0
   m_Name: FinalBoss!
   m_TagString: Enemy
@@ -137,7 +143,7 @@ MonoBehaviour:
   enemyID: 0
   formation: {fileID: 0}
   Explosion: {fileID: 1614365948449302937, guid: 67fb249533142fc49880a4887ec714e9, type: 3}
-  health: 1300
+  health: 1100
   Score: 10000
 --- !u!54 &8157054022697683177
 Rigidbody:
@@ -164,11 +170,91 @@ MeshCollider:
   m_GameObject: {fileID: 6965554236964755769}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6894053023838327084, guid: 710ef0aa70ed67143a5fdf9632c6ce31, type: 3}
+--- !u!135 &1621052027295959056
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965554236964755769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 45
+  m_Center: {x: 0, y: -30, z: -80}
+--- !u!135 &3580486070928164986
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965554236964755769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: -50, z: -165}
+--- !u!135 &2901880727530881219
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965554236964755769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 70
+  m_Center: {x: 130, y: -10, z: -135}
+--- !u!135 &7357883044867958657
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965554236964755769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 70
+  m_Center: {x: -130, y: -10, z: -135}
+--- !u!136 &2029264051998297920
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965554236964755769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 10
+  m_Height: 130
+  m_Direction: 0
+  m_Center: {x: -115, y: -30, z: -260}
+--- !u!136 &2484186603707433291
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965554236964755769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 10
+  m_Height: 130
+  m_Direction: 0
+  m_Center: {x: 115, y: -30, z: -260}
 --- !u!1 &7797816734841108710
 GameObject:
   m_ObjectHideFlags: 0

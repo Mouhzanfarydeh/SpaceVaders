@@ -561,7 +561,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c29c2c2e785e87f41bcd74db13415d37, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9f6e18d60653abd43874f9afd871cbbf, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -659,8 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd37a88227d7f4c4983d423cde73325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
-  NewLevel: Menu
+  delay: 5.7
+  NewLevel: Menu Jul
 --- !u!1 &1272814387
 GameObject:
   m_ObjectHideFlags: 0
