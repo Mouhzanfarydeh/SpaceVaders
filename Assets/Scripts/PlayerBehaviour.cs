@@ -115,10 +115,11 @@ public class PlayerBehaviour : MonoBehaviour
 
             Vector3 direction = new Vector3(horizontal, invert * vertical, 0);
             Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 6.0f);
+         // Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 10f);
 
 
             transform.position += direction * speed * Time.deltaTime;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
+        //  transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
 
             //*************************************** limit position between -150x, 150x
 
