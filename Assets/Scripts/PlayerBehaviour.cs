@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // wird automatisch auf den Player bezogen beim raufziehen des Scriptes
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(Rigidbody))]
 
 
@@ -36,13 +37,13 @@ public class PlayerBehaviour : MonoBehaviour
     double nextFireBullet;
     int bulletLevel = 1; // Anzahl der Schüsse, später noch anpassbar
     int bulletDamage = 1; // Später noch anpassbar
-    double fireRate = 0.489; // Später noch anpassbar 0.5 ---> 0.489
+    double fireRate = 0.490; // Später noch anpassbar 0.5 ---> 0.490
     public GameObject bullet;
 
     [Header("Player")]
     // Leben vom Spieler
-    public static int health = 3;
-    public static int Life = 3;
+    public /*static*/ int health = 3;
+    public /*static*/ int Life = 3;
 
     public Material[] Materials;
     public static int currentMaterials;
@@ -58,6 +59,17 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip HitSound;
     public AudioClip Alarm;
 
+    [Header("UI Icons")]
+   // public SpriteRenderer Chichi1;
+ 
+    public Image Chichi1; //Full
+    public Image Chichi2;
+    public Image Chichi3;
+    public Image Schwanz1;
+    public Image Schwanz2;
+    public Image Schwanz3;
+    public Image Schwanz4;
+
     //  public GameObject WarpEffect;
 
     //Resete Spieler
@@ -66,6 +78,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
+        /*
+        Chichi1 = GetComponent<Image>();
+        Chichi2 = GetComponent<Image>();
+        Chichi3 = GetComponent<Image>();
+        Schwanz1 = GetComponent<Image>();
+        Schwanz2 = GetComponent<Image>();
+        Schwanz3 = GetComponent<Image>();
+        */
+
+
         initPosition = transform.position; //Position an der das Schiff resetet wird
 
         scene = SceneManager.GetActiveScene();
@@ -73,6 +95,14 @@ public class PlayerBehaviour : MonoBehaviour
         {
             health = 3;
             Life = 3;
+            Chichi1.enabled = true;
+            Chichi2.enabled = false;
+            Chichi3.enabled = false;
+            Schwanz1.enabled = true;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = false;
+
 
         }
 
@@ -85,31 +115,77 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Rauchbei1Schaden.SetActive(false);
             Rauchbei2Schaden.SetActive(false);
-
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
+            Chichi1.enabled = true;
+            Chichi2.enabled = false;
+            Chichi3.enabled = false;
         }
 
         if (health == 2)
         {
             Rauchbei1Schaden.SetActive(true);
             Rauchbei2Schaden.SetActive(false);
-
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
+            Chichi1.enabled = false;
+            Chichi2.enabled = true;
+            Chichi3.enabled = false;
         }
 
         if (health == 1)
         {
             Rauchbei1Schaden.SetActive(false);
             Rauchbei2Schaden.SetActive(true);
-
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
+            Chichi1.enabled = false;
+            Chichi2.enabled = false;
+            Chichi3.enabled = true;
+        }
+
+        if (Life == 4)
+        {
+            Schwanz1.enabled = true;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = true;
+
+        }
+
+        if (Life == 3)
+        {
+            Schwanz1.enabled = true;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = false;
+
+        }
+
+        if (Life == 2)
+        {
+            Schwanz1.enabled = false;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = false;
         }
 
 
+        if (Life == 1)
+        {
+            Schwanz1.enabled = false;
+            Schwanz2.enabled = false;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = false;
 
+        }
+        if (Life == 0)
+        {
+            Schwanz1.enabled = false;
+            Schwanz2.enabled = false;
+            Schwanz3.enabled = false;
+            Schwanz4.enabled = false;
+        }
 
 
         /*
@@ -228,22 +304,18 @@ public class PlayerBehaviour : MonoBehaviour
         currentMaterials %= Materials.Length;
         GetComponent<Renderer>().material = Materials[currentMaterials];
 
-
-
-
         GameManager.instance.DecreaseHealth();
         //renderer.material.mainMaterial = Materials[currentMaterials];
 
         if (health == 1)
         {
-
             AudioSource.PlayClipAtPoint(Alarm, transform.position);
-
         }
 
-            if (health <= 0)
-            {
+        if (health <= 0)
+        {
 
+            Life--;
 
 
             // Verliere Leben
@@ -260,12 +332,19 @@ public class PlayerBehaviour : MonoBehaviour
 
               // Zerstöre Spieler
               //Destroy(gameObject);
-               StartCoroutine(Reset());
-
-            }
+              if (Life == 0)
+              {
+                Destroy(gameObject);
+              }
+              else
+              {
+                StartCoroutine(Reset());
+              }
+              
+        }
     }
 
-    public IEnumerator Reset() //Koroutine
+    IEnumerator Reset() //Koroutine
     {
         GameManager.instance.DecreaseLifes(); //Verändert die Anzahl der Leben im UI
         GetComponent<MeshRenderer>().enabled = false; //Greift auf das SpielerSchiff zu und schaltet es aus
@@ -275,7 +354,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         transform.position = initPosition;
 
-        yield return new WaitForSeconds(0.1f); //warte 0.1 sekunden ab bevor man sich wieder bewegen kann
+        yield return new WaitForSeconds(2f); //warte 0.1 sekunden ab bevor man sich wieder bewegen kann
 
         GetComponent<MeshRenderer>().enabled = true; //Greift auf das SpielerSchiff zu und schaltet es an
         GetComponent<Collider>().enabled = true;
@@ -284,13 +363,15 @@ public class PlayerBehaviour : MonoBehaviour
         GameManager.instance.HealingHealth();
     }
     
-    public IEnumerator Jump() //Koroutine
+    IEnumerator wait() //Koroutine
     {
-        //Greift auf das SpielerSchiff zu und schaltet es aus
-        transform.position = initPosition;
+        yield return new WaitForSeconds(5f); //warte 5 sekunden ab 
 
-        yield return new WaitForSeconds(5f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
+    }
 
+    public void Bonusss()
+    {
+        Life++;
     }
     
     /*

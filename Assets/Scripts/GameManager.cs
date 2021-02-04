@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public PlayerBehaviour ändern;
     public static GameManager instance;
 
     public GameObject Warpeffect;
@@ -128,6 +129,9 @@ public class GameManager : MonoBehaviour
         bonusScore += amount;
         if (bonusScore >= scoreToBonusLife)
         {
+            ändern = GameObject.Find("wasp").GetComponent<PlayerBehaviour>();
+            ändern.Bonusss(); //führe void Bonusss aus
+            // Life++; //ändern Lebenswert im Player
             lifes++;
             //   bonusScore = 0; Problem = Beispiel Gegner besiegt man bekommt 300 Punkte  + 90800 Ergebniss = Reset auf 0 anstatt auf 100 Punkte
             bonusScore %= scoreToBonusLife; // Ergebniss wird dadurch genauer
@@ -178,7 +182,8 @@ public class GameManager : MonoBehaviour
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
             ScoreHolder.score = score;
             hasLost = true;
-            SceneManager.LoadScene("GameOver");
+            StartCoroutine(wait());
+           // SceneManager.LoadScene("GameOver");
             //Invoke("LoadEnd", 5f);
         }
     }
@@ -323,6 +328,12 @@ public class GameManager : MonoBehaviour
     {
         level++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator wait() //Koroutine
+    {
+        yield return new WaitForSeconds(3f); //warte 5 sekunden ab 
+        SceneManager.LoadScene("GameOver");
     }
 
     /*

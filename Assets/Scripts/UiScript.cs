@@ -38,26 +38,26 @@ public class UiScript : MonoBehaviour
      public void UpdateScoreText(int amount)
      {
 
-        scoreText.text = amount.ToString("D9"); //steht für 9 Dezimalstellen
+        scoreText.text = amount.ToString("D8"); //steht für 9 Dezimalstellen
      }
 
     public void UpdateLifeText(int amount)
     {
-        lifeText.text = "x" + amount.ToString("D2"); //steht für 2 Dezimalstellen
+        lifeText.text = "x" + amount.ToString("D1"); //steht für 2 Dezimalstellen
     }
 
     public void ShowStageText(int amount)
     {
-        stageText.gameObject.SetActive(true);
+       // stageText.gameObject.SetActive(true);
         stageText.text = "Stage " + amount;
 
-        Invoke("DeactivateStagetext", 3f);
+       // Invoke("DeactivateStagetext", 3f);
     }
 
-    void DeactivateStagetext()
-    {
-        stageText.gameObject.SetActive(false);
-        CancelInvoke("DeactivateStagetext");
-    }
+  //  void DeactivateStagetext()
+   // {
+   //     stageText.gameObject.SetActive(false);
+  //      CancelInvoke("DeactivateStagetext");
+  //  }
 
 }
