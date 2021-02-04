@@ -131,10 +131,10 @@ public class SpawnManager : MonoBehaviour
                 BossBehavior.SpawnSetup(activePathList[ZickZack()], BossID, BossFormation); //einbringung der Daten vom Enemybehavior (pathToFollow = path, enemyID = ID, formation = _formation
                 BossID++;
 
-                //spawnedEnemies.Add(newBoss);
+                spawnedEnemies.Add(newBoss);
 
                 //weitergeben an Game Manager
-                //GameManager.instance.AddEnemy();
+                GameManager.instance.AddEnemy();
 
                 //Warten auf nächstes Spawn (interval)
                 yield return new WaitForSeconds(enemySpawnInterval);

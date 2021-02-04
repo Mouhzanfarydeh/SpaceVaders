@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Scenes/ChichiLogo.unity
+    guid: cb66c15610429034e9037ee8a06f1b77
+  - enabled: 1
     path: Assets/Scenes/Scenes/Video.unity
     guid: 6aeae31cc7b03e0478d4f162e766dc48
   - enabled: 1

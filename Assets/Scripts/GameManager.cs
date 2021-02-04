@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject Warpeffect;
 
+    public GameObject wasp;
+
     private Scene scene;
 
     //private int nextSceneToLoad;
@@ -73,7 +75,7 @@ public class GameManager : MonoBehaviour
      // UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
      // UiScript.instance.ShowStageText(level);
-        UiScript.instance.UpdateRocketText(rocket);
+     // UiScript.instance.UpdateRocketText(rocket); //-------------------------*** Erst mal testen
         UiScript.instance.UpdateHealthText(health);
     }
     
@@ -287,6 +289,16 @@ public class GameManager : MonoBehaviour
             // PlayerBehaviour.instance.WarpJump();
 
             Invoke("LoadNextScene", 5f);
+
+            wasp.GetComponent<PlayerBehaviour>().enabled = false;
+            //wasp.SetActive(false);
+
+
+            //PlayerBehaviour Wasp = GetComponent<PlayerBehaviour>();
+            //StartCoroutine (Wasp.Reset());
+            //StartCoroutine(Reset());
+
+            // StartCoroutine(Jump());
             //level++;
 
             //SceneManager.LoadScene("Stage2");
@@ -294,12 +306,25 @@ public class GameManager : MonoBehaviour
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+    /*
+    IEnumerator Jump() //Koroutine
+    {
+        //Greift auf das SpielerSchiff zu und schaltet es aus
+        GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(5f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
+
+        GetComponent<Collider>().enabled = true;
+
+    }
+    */
 
     void LoadNextScene()
     {
         level++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
     /*
     public void WinCondition()
     {

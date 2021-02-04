@@ -6015,6 +6015,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2371787248356745306, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: rocket
+      value: 
+      objectReference: {fileID: 9219164784711208889, guid: 3a91dc21cdfc29b4d97a429a87fec2e3, type: 3}
+    - target: {fileID: 2371787248356745306, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: rocketSpawns.Array.data[0]
       value: 
       objectReference: {fileID: 1406405911}

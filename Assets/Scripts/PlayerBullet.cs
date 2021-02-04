@@ -14,8 +14,8 @@ public class PlayerBullet : MonoBehaviour
 
     void Start()
     {
-        // zerstöre Kugel nach 9 Sekunden
-        Destroy(gameObject, 8f);
+        // zerstöre Kugel nach 8 Sekunden
+        Destroy(gameObject, 3f);
     }
 
 

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 209386774}
   - component: {fileID: 209386773}
   - component: {fileID: 209386772}
-  - component: {fileID: 209386776}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -223,20 +222,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &209386776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209386771}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b66adde854410b41a3df4a616463412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: c29c2c2e785e87f41bcd74db13415d37, type: 2}
-  ResolutionDropdown: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &765925363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -561,11 +546,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c29c2c2e785e87f41bcd74db13415d37, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9f6e18d60653abd43874f9afd871cbbf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -659,8 +644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd37a88227d7f4c4983d423cde73325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5.7
-  NewLevel: Menu Jul
+  delay: 4
+  NewLevel: Video
 --- !u!1 &1272814387
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1272814388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -769,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 25.3, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2094633475
@@ -792,7 +777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d36a13c16728d36459e4ded6cd8e0056, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8c92e4f1f891da4c84d7a3134f02a34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

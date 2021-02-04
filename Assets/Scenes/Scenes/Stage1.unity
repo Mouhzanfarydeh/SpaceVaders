@@ -1471,6 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Warpeffect: {fileID: 842534885}
+  wasp: {fileID: 551670744}
   scoreToBonusLife: 10000
 --- !u!4 &368262335
 Transform:
@@ -2346,6 +2347,11 @@ Transform:
   m_Father: {fileID: 1476258861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &551670744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8688933089459414976, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+  m_PrefabInstance: {fileID: 2371787249582287689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &552174734
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851476631741875410, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1851476631741875410, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3717,7 +3723,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1031601009
 GameObject:
@@ -4956,7 +4962,7 @@ Transform:
   m_Children:
   - {fileID: 519245006}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1506191152
 GameObject:
@@ -6439,6 +6445,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2371787248356745306, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: rocket
+      value: 
+      objectReference: {fileID: 9219164784711208889, guid: 3a91dc21cdfc29b4d97a429a87fec2e3, type: 3}
+    - target: {fileID: 2371787248356745306, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: rocketSpawns.Array.data[0]
       value: 
       objectReference: {fileID: 1406405911}
@@ -6450,6 +6460,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: Warpeffect
+      value: 
+      objectReference: {fileID: 842534885}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Rauchbei1Schaden
       value: 
@@ -6513,6 +6527,14 @@ PrefabInstance:
     - target: {fileID: 6112649380876773554, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112649380876773555, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112649380876773555, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8349280322234219898, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: m_RootOrder

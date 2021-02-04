@@ -145,12 +145,13 @@ public class PlayerBehaviour : MonoBehaviour
             float vertical = Input.GetAxis("Vertical");
 
             Vector3 direction = new Vector3(horizontal, invert * vertical, 0);
-            Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 6.0f);
-         // Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 10f);
+            Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 100f);
+         // Vector3 finaldirection = new Vector3(horizontal, invert * vertical, 6.0f); //alte Version
 
 
             transform.position += direction * speed * Time.deltaTime;
-        //  transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 0.5f); 
+       //   transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finaldirection), Mathf.Deg2Rad * 50.0f); //alte Version
 
             //*************************************** limit position between -150x, 150x
 
@@ -193,9 +194,19 @@ public class PlayerBehaviour : MonoBehaviour
                 newBullet.GetComponent<PlayerBullet>().SetDamage(bulletDamage);
             }
         }
-
     }
 
+    /*
+    void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "Stop")
+        {
+              StartCoroutine(Reset());
+            //StartCoroutine(Jump());
+        }
+    }
+    /*
     /*
     void OnTriggerEnter(Collider col) // wenn man mit was zusammenstößt, Kugeln, Gegner etc.
     {
@@ -254,7 +265,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
     }
 
-    IEnumerator Reset() //Koroutine
+    public IEnumerator Reset() //Koroutine
     {
         GameManager.instance.DecreaseLifes(); //Verändert die Anzahl der Leben im UI
         GetComponent<MeshRenderer>().enabled = false; //Greift auf das SpielerSchiff zu und schaltet es aus
@@ -272,7 +283,16 @@ public class PlayerBehaviour : MonoBehaviour
         health = 3;
         GameManager.instance.HealingHealth();
     }
+    
+    public IEnumerator Jump() //Koroutine
+    {
+        //Greift auf das SpielerSchiff zu und schaltet es aus
+        transform.position = initPosition;
 
+        yield return new WaitForSeconds(5f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
+
+    }
+    
     /*
      public void WarpJump() 
      {
