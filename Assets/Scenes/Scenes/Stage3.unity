@@ -376,8 +376,6 @@ MonoBehaviour:
   bulletSpawns:
   - {fileID: 1999729913}
   bullet: {fileID: 7791082111917784016, guid: a8f3e96c768d53f41a3b867e81c16612, type: 3}
-  health: 3
-  Life: 3
   Materials: []
   Rauchbei1Schaden: {fileID: 0}
   Rauchbei2Schaden: {fileID: 0}
@@ -6202,7 +6200,7 @@ PrefabInstance:
     - target: {fileID: 2371787248356745306, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: rocket
       value: 
-      objectReference: {fileID: 9219164784711208889, guid: 3a91dc21cdfc29b4d97a429a87fec2e3, type: 3}
+      objectReference: {fileID: 9219164784711208889, guid: 6f9c1202d43ef384d849f5010f991ca9, type: 3}
     - target: {fileID: 2371787248356745306, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: rocketSpawns.Array.data[0]
       value: 

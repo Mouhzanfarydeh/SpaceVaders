@@ -3405,7 +3405,7 @@ PrefabInstance:
     - target: {fileID: 485056269389558886, guid: 0f27eb8311a616c4fa4e8b013469408c, type: 3}
       propertyPath: rocket
       value: 
-      objectReference: {fileID: 9219164784711208889, guid: 3a91dc21cdfc29b4d97a429a87fec2e3, type: 3}
+      objectReference: {fileID: 9219164784711208889, guid: 6f9c1202d43ef384d849f5010f991ca9, type: 3}
     - target: {fileID: 485056269389558886, guid: 0f27eb8311a616c4fa4e8b013469408c, type: 3}
       propertyPath: rocketSpawns.Array.data[0]
       value: 
