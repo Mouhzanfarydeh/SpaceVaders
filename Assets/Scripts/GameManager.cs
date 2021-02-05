@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
      // UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
      // UiScript.instance.ShowStageText(level);
-     // UiScript.instance.UpdateRocketText(rocket); //-------------------------*** Erst mal testen
+        UiScript.instance.UpdateRocketText(rocket); //-------------------------*** Erst mal testen
         UiScript.instance.UpdateHealthText(health);
     }
     
@@ -176,15 +176,17 @@ public class GameManager : MonoBehaviour
 
         UiScript.instance.UpdateLifeText(lifes);
 
-        if (lifes <= 0)
+        if (lifes == 0)
         {
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
             ScoreHolder.score = score;
             hasLost = true;
-            StartCoroutine(wait());
-           // SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
+            // StartCoroutine(wait());
+            // SceneManager.LoadScene("GameOver");
             //Invoke("LoadEnd", 5f);
+            return;
         }
     }
 
@@ -223,11 +225,7 @@ public class GameManager : MonoBehaviour
             ScoreHolder.score = score;
 
             Warpeffect.SetActive(true);
-
-            rocket++;
-            rocket++;
-            rocket++;
-
+            
             //gameObject.SetActive(true);
             //Instantiate(WarpEffect, transform.position, Quaternion.identity);
 
@@ -295,7 +293,12 @@ public class GameManager : MonoBehaviour
 
             Invoke("LoadNextScene", 5f);
 
+            rocket++;
+            rocket++;
+            rocket++;
+
             wasp.GetComponent<PlayerBehaviour>().enabled = false;
+            return;
             //wasp.SetActive(false);
 
 
@@ -330,11 +333,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    IEnumerator wait() //Koroutine
-    {
-        yield return new WaitForSeconds(3f); //warte 5 sekunden ab 
-        SceneManager.LoadScene("GameOver");
-    }
+   // IEnumerator wait() //Koroutine
+   // {
+        //wasp.GetComponent<PlayerBehaviour>().enabled = false;
+        //yield return new WaitForSeconds(0.2f); //warte 0.2 sekunden ab 
+        //SceneManager.LoadScene("GameOver");
+    //}
 
     /*
     public void WinCondition()

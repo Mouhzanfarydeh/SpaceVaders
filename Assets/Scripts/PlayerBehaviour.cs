@@ -42,11 +42,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Player")]
     // Leben vom Spieler
-    public /*static*/ int health = 3;
-    public /*static*/ int Life = 3;
+    public static int health = 3; //static muss sein sonst reset nach jeder stage
+    public static int Life = 3;
 
     public Material[] Materials;
     public static int currentMaterials;
+   // Material End;
 
     public GameObject Rauchbei1Schaden;
     public GameObject Rauchbei2Schaden;
@@ -334,8 +335,19 @@ public class PlayerBehaviour : MonoBehaviour
               //Destroy(gameObject);
               if (Life == 0)
               {
-                Destroy(gameObject);
-              }
+                
+                    Schwanz1.enabled = false;
+                    Schwanz2.enabled = false;
+                    Schwanz3.enabled = false;
+                    Schwanz4.enabled = false;
+                //Destroy(gameObject);
+                //****************************************** Hier noch Spielerschiff ausschalten vllt fette explosion triggern
+                // End = GetComponent<Renderer>().material;
+                // Destroy(End);
+                Instantiate(Explosion, transform.position, Quaternion.identity);
+
+
+            }
               else
               {
                 StartCoroutine(Reset());

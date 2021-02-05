@@ -41,10 +41,6 @@ public class Rocketperspace : MonoBehaviour
             rocketsleft++;
             rocketsleft++;
         }
-
-
-
-
     }
 
     // Update is called once per frame
