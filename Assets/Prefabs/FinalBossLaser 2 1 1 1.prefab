@@ -30,23 +30,6 @@ Transform:
   m_Father: {fileID: 5889491329325006887}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6093873228876081022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3271747286423298932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb040b8a3d8844408d7df2b7fc5c133, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  firePoint: {fileID: 340947900167237311}
-  damage: 1
-  useLaser: 1
-  lineRenderer: {fileID: 1803064671}
 --- !u!120 &1803064671
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -145,6 +128,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &6093873228876081022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271747286423298932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb040b8a3d8844408d7df2b7fc5c133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  firePoint: {fileID: 340947900167237311}
+  damage: 1
+  useLaser: 1
+  lineRenderer: {fileID: 1803064671}
 --- !u!1001 &5606148651523750477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1621052027295959056, guid: 8b8b509ccbbbf5d43947db91121cf708, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2051010676514798186, guid: 8b8b509ccbbbf5d43947db91121cf708, type: 3}
       propertyPath: m_RootOrder
@@ -202,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6965554236964755769, guid: 8b8b509ccbbbf5d43947db91121cf708, type: 3}
       propertyPath: m_Name
-      value: FinalBossLaser 2 1 1
+      value: FinalBossLaser 2 1 1 1
       objectReference: {fileID: 0}
     - target: {fileID: 6965554236964755769, guid: 8b8b509ccbbbf5d43947db91121cf708, type: 3}
       propertyPath: m_IsActive

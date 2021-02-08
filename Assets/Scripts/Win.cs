@@ -12,7 +12,7 @@ public class Win : MonoBehaviour
 
     void Start()
     {
-        highscoreText.text = "HighScore " + ScoreHolder.score;
+        highscoreText.text = " " + ScoreHolder.score;
     }
 
     void Update()
