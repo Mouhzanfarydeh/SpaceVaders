@@ -41,6 +41,18 @@ public class Rocketperspace : MonoBehaviour
             rocketsleft++;
             rocketsleft++;
         }
+        if (scene.name == "Stage4")
+        {
+            rocketsleft++;
+            rocketsleft++;
+            rocketsleft++;
+        }
+        if (scene.name == "Stage5")
+        {
+            rocketsleft++;
+            rocketsleft++;
+            rocketsleft++;
+        }
     }
 
     // Update is called once per frame

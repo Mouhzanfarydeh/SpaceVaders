@@ -30,7 +30,7 @@ public class UiScript : MonoBehaviour
     public void UpdateRocketText(int amount)
     {
 
-        RocketText.text = "x" + amount.ToString("D1");
+        RocketText.text = "x" + amount.ToString("D2");
     }
     
      // Text verändert sich je nach dem was passiert

@@ -70,6 +70,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Image Schwanz2;
     public Image Schwanz3;
     public Image Schwanz4;
+    public Image Schwanz5;
 
     //  public GameObject WarpEffect;
 
@@ -145,13 +146,22 @@ public class PlayerBehaviour : MonoBehaviour
             Chichi3.enabled = true;
         }
 
+        if (Life == 5)
+        {
+            Schwanz1.enabled = true;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = true;
+            Schwanz5.enabled = true;
+        }
+
         if (Life == 4)
         {
             Schwanz1.enabled = true;
             Schwanz2.enabled = true;
             Schwanz3.enabled = true;
             Schwanz4.enabled = true;
-
+            Schwanz5.enabled = false;
         }
 
         if (Life == 3)
@@ -160,6 +170,7 @@ public class PlayerBehaviour : MonoBehaviour
             Schwanz2.enabled = true;
             Schwanz3.enabled = true;
             Schwanz4.enabled = false;
+            Schwanz5.enabled = false;
 
         }
 
@@ -169,6 +180,7 @@ public class PlayerBehaviour : MonoBehaviour
             Schwanz2.enabled = true;
             Schwanz3.enabled = true;
             Schwanz4.enabled = false;
+            Schwanz5.enabled = false;
         }
 
 
@@ -178,6 +190,7 @@ public class PlayerBehaviour : MonoBehaviour
             Schwanz2.enabled = false;
             Schwanz3.enabled = true;
             Schwanz4.enabled = false;
+            Schwanz5.enabled = false;
 
         }
         if (Life == 0)
@@ -186,6 +199,7 @@ public class PlayerBehaviour : MonoBehaviour
             Schwanz2.enabled = false;
             Schwanz3.enabled = false;
             Schwanz4.enabled = false;
+            Schwanz5.enabled = false;
         }
 
 
