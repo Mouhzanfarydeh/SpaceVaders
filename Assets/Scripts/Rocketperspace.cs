@@ -21,6 +21,7 @@ public class Rocketperspace : MonoBehaviour
     int rocketDamage = 3; // Später noch anpassbar
     public double RocketfireRate = 1; // Später noch anpassbar
     public GameObject rocket;
+    public AudioClip Empty;
 
     void Start()
     { 
@@ -73,18 +74,14 @@ public class Rocketperspace : MonoBehaviour
                 newRocket.GetComponent<Rocket>().SetDamage(rocketDamage);
             }
         }
-      //  else
-      //  {
-       //     Debug.Log("Raketen leer");
-       // }
-    }
 
-    /*
-    void start()
-    {
-        rocketimUI = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Debug.Log(rocketimUI.rocket);
+        if (Input.GetKeyDown("space") && rocketsleft == 0) //Wenn man 0 Raketen hat und Spcae drückt, spiele Sound ab
+        {
+
+            AudioSource.PlayClipAtPoint(Empty, transform.position);
+        }
+
     }
-    */
+    
 
 }

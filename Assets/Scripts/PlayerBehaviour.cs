@@ -59,6 +59,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject Explosion;
     public AudioClip HitSound;
     public AudioClip Alarm;
+    public AudioClip Respawn;
 
     [Header("UI Icons")]
    // public SpriteRenderer Chichi1;
@@ -329,7 +330,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (health <= 0)
         {
-
+            AudioSource.PlayClipAtPoint(Respawn, transform.position);
             Life--;
 
 
