@@ -8,12 +8,25 @@ public class Win : MonoBehaviour
 {
 
     public Text highscoreText;
-
+    public Image Highscore;
+    public Image winText;
 
     void Start()
     {
         highscoreText.text = " " + ScoreHolder.score;
+
+        Invoke("DisableText", 3f);//invoke after 5 seconds
+
     }
+
+    void DisableText()
+    {
+        highscoreText.enabled = false;
+        winText.enabled = false;
+        Highscore.enabled = false;
+    }
+
+
 
     void Update()
     {
