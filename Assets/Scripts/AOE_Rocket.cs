@@ -10,7 +10,7 @@ using UnityEngine;
 public class AOE_Rocket : MonoBehaviour
 {
     public GameObject Explosion;
-    public int damage;
+    public int damage = 30;
     public float speed = 20f; // geschwindigkeit der Schüsse, später noch anpassbar (muss man erst mal testen)
     public GameObject AOE;
 
