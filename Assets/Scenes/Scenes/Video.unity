@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd37a88227d7f4c4983d423cde73325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5.7
+  delay: 7
   NewLevel: Menu Jul
 --- !u!1 &1272814387
 GameObject:
@@ -788,11 +788,11 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d36a13c16728d36459e4ded6cd8e0056, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e6d82e05f18a444b9f44cffc3429aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
