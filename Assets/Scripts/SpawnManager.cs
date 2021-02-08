@@ -174,17 +174,18 @@ public class SpawnManager : MonoBehaviour
         {
             curVirusAmount += waveList[i].VirusAmount;
         }
-       
-      //  if (curVirusAmount > 35)                                 //wenn mehr als 35 Feinde im Spiel sind entsteht Fehlermeldung
-      //  {
-      //      Debug.LogError("<color=red>Error!!</color> Your Virus amount is to high!" + curVirusAmount + "/ 20");
-      //  }
-     // else
-     // { 
-      //  Debug.Log("Current Total Virus: " + curVirusAmount);
-    //  }
+        /*
+         if (curVirusAmount > 35)                                 //wenn mehr als 35 Feinde im Spiel sind entsteht Fehlermeldung
+         {
+             Debug.LogError("<color=red>Error!!</color> Your Virus amount is to high!" + curVirusAmount + "/ 35");
+         }
+       else
+       { 
+         Debug.Log("Current Total Virus: " + curVirusAmount);
+       }
+     }
+     */
     }
-    
     /*
     void ReportToGameManager()
     {

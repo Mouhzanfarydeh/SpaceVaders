@@ -272,6 +272,22 @@ MonoBehaviour:
   Enemy2Formation: {fileID: 0}
   BossFormation: {fileID: 0}
   waveList:
+  - VirusAmount: 8
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 7933706848004190843, guid: 0c10057b5fb354d4c88b845ce30bd25c, type: 3}
+    - {fileID: 2025515549000302067, guid: c4cadda517ef1e44fb982971426dd52f, type: 3}
+  - VirusAmount: 5
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 3957785842269172290, guid: f8dd9396f976d9340ad8edfe3c2d7596, type: 3}
+  - VirusAmount: 5
+    Enemy2Amount: 0
+    BossAmount: 0
+    pathPrefabs:
+    - {fileID: 8841682498333860952, guid: 675942fb339a1d1429aa46107b34cccb, type: 3}
   - VirusAmount: 5
     Enemy2Amount: 0
     BossAmount: 0
@@ -281,13 +297,7 @@ MonoBehaviour:
     Enemy2Amount: 0
     BossAmount: 0
     pathPrefabs:
-    - {fileID: 3957785842269172290, guid: f8dd9396f976d9340ad8edfe3c2d7596, type: 3}
-  - VirusAmount: 10
-    Enemy2Amount: 0
-    BossAmount: 0
-    pathPrefabs:
-    - {fileID: 7933706848004190843, guid: 0c10057b5fb354d4c88b845ce30bd25c, type: 3}
-    - {fileID: 2025515549000302067, guid: c4cadda517ef1e44fb982971426dd52f, type: 3}
+    - {fileID: 833228747590913469, guid: 43099c74c1f1a424cafc799538203514, type: 3}
   spawnedEnemies: []
 --- !u!1001 &237984356
 PrefabInstance:
