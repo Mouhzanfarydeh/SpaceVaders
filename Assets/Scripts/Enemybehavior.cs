@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Enemybehavior : MonoBehaviour
 {
+    //AOE
+    public GameObject AOE;
+    public bool Mothership = false;
+
  public Path pathToFollow; // greift auf das Script Path zu
 
 //Path infos
@@ -208,6 +212,15 @@ public float rotationSpeed = 5f;
                     formation.enemyList.Remove(formation.enemyList[i]);
                 }
             }
+
+            if (Mothership)
+            {
+                //Spawnt Mothership AOE
+                Instantiate(AOE, transform.position, transform.rotation);
+            }
+            //Spawnt Mothership AOE
+            //Instantiate(AOE, transform.position, transform.rotation);
+
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);
