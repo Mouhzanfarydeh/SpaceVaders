@@ -1,4 +1,4 @@
-﻿
+﻿using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +10,11 @@ public class Enemybehavior : MonoBehaviour
 
  public Path pathToFollow; // greift auf das Script Path zu
 
+    private Scene scene;
+    public Path pathToFollow; // greift auf das Script Path zu
+
 //Path infos
-public int currentWayPointID = 0;
+   public int currentWayPointID = 0;
 public float speed = 2;
 //ist die entfernung vom wegpunkt, wie genau der gegner den verfolgen soll (Radius)
 public float reachDistance = 0.4f;
@@ -50,15 +53,80 @@ public float rotationSpeed = 5f;
 
     public Material[] Materials;
     public static int currentMaterials;
+    // private GameObject Test;
+    //public Renderer childColor;
+    //public Material demagedMaterial;
     void Start()
     {
-        
+        if (scene.name == "Stage2")
+        {
+
+            //Skin für den Boss zurücksetzten           
+             currentMaterials = 5;
+
+            //childColor = GetComponentInChildren<MeshRenderer>();
+            //GameObject Unterobjekt = transform.GetChild("Test").gameObject;
+            // Test = GameObject.Find("Test");
+            // Test<Renderer>().material = Materials[currentMaterials];
+            //Test.renderer.material = Materials[currentMaterials];
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+            //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
+            //childColor.material = demagedMaterial;
+
+
+
+        }
     }
+ 
  
     // Update is called once per frame
    void Update()
     {
-        switch(enemyState)
+
+        
+        if (health == 1200)
+        {
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 1000)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 800)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 600)//(health < 600 && 400 > health)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 400)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 200)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+        
+        switch (enemyState)
         {
             case EnemyStates.ON_PATH:
                 MoveOnThePath(pathToFollow);

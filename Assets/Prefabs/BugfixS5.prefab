@@ -183,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1872385699213031319, guid: fa76b2fa84f07af48bd88c1e2f8e85e0, type: 3}
       propertyPath: speed
-      value: 5.4
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 1872385699213031319, guid: fa76b2fa84f07af48bd88c1e2f8e85e0, type: 3}
       propertyPath: Explosion
@@ -199,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2304102635169349041, guid: fa76b2fa84f07af48bd88c1e2f8e85e0, type: 3}
       propertyPath: m_Name
-      value: Bugfix
+      value: BugfixS5
       objectReference: {fileID: 0}
     - target: {fileID: 2304102635169349041, guid: fa76b2fa84f07af48bd88c1e2f8e85e0, type: 3}
       propertyPath: m_IsActive
