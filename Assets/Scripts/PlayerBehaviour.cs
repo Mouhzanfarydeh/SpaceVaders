@@ -383,9 +383,9 @@ public class PlayerBehaviour : MonoBehaviour
                 // End = GetComponent<Renderer>().material;
                 // Destroy(End);
                 Instantiate(Explosion, transform.position, Quaternion.identity);
+                SceneManager.LoadScene("GameOver");
 
-
-            }
+              }
               else
               {
                 StartCoroutine(Reset());

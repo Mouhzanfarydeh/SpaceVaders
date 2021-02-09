@@ -72,8 +72,8 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-
-     // UiScript.instance.UpdateScoreText(score);
+        ScoreHolder.score = score;
+        // UiScript.instance.UpdateScoreText(score);
         UiScript.instance.UpdateLifeText(lifes);
      // UiScript.instance.ShowStageText(level);
         UiScript.instance.UpdateRocketText(rocket); //-------------------------*** Erst mal testen
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
 
         UiScript.instance.UpdateLifeText(lifes);
 
-        if (lifes <= 0)
+        if (lifes == 0)
         {
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
@@ -191,6 +191,7 @@ public class GameManager : MonoBehaviour
 
             //Application.LoadLevel("GameOver");
             SceneManager.LoadScene("GameOver");
+            return;
             //return;
             // StartCoroutine(waitlose());
             // StartCoroutine(wait());

@@ -9848,7 +9848,7 @@ GameObject:
   - component: {fileID: 2072689395}
   - component: {fileID: 2072689394}
   m_Layer: 5
-  m_Name: Text (TMP) (7)
+  m_Name: Text William
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9893,7 +9893,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"\xDCberleg mir noch was\""
+  m_text: William would like to thank his friends and family for all the games testing
+    and especially Anne for her mental support and love
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62da4fcb37d0fb4eaff863ef3964840, type: 2}
   m_sharedMaterial: {fileID: 3187863724746655290, guid: d62da4fcb37d0fb4eaff863ef3964840, type: 2}
