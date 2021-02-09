@@ -32,12 +32,12 @@ public class Win : MonoBehaviour
     {
         if(Input.GetMouseButton(0)) //der erste klick der Maus
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu Jul");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu Jul");
         }
     }
 }

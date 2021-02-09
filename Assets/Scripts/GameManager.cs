@@ -184,10 +184,10 @@ public class GameManager : MonoBehaviour
             ScoreHolder.score = score;
             hasLost = true;
          // StartCoroutine(waitlose());
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
             // StartCoroutine(wait());
             // SceneManager.LoadScene("GameOver");
-            //Invoke("LoadEnd", 5f);
+            Invoke("LoadEnd", 5f);
             return;
         }
     }
