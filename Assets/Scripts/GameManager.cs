@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
         {
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
-            wasp.GetComponent<PlayerBehaviour>().enabled = false;
+            //wasp.GetComponent<PlayerBehaviour>().enabled = false;
             ScoreHolder.score = score;
             hasLost = true;
          // StartCoroutine(waitlose());

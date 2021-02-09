@@ -66,7 +66,7 @@ public float rotationSpeed = 5f;
             // Test = GameObject.Find("Test");
             // Test<Renderer>().material = Materials[currentMaterials];
             //Test.renderer.material = Materials[currentMaterials];
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+            GetComponent<MeshRenderer>().material = Materials[currentMaterials];
             //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
             //childColor.material = demagedMaterial;
 
