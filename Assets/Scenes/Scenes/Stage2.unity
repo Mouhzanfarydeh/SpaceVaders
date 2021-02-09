@@ -1634,7 +1634,7 @@ MonoBehaviour:
   waveSpawnInterval: 0.1
   VirusPrefab: {fileID: 0}
   Enemy2Prefab: {fileID: 0}
-  BossPrefab: {fileID: 1013219469504586377, guid: 7d90b62084b81be49b6b85cf115c22c4, type: 3}
+  BossPrefab: {fileID: 3271747286423298932, guid: e263f9d9bc0d2b447b233833eb5b3eca, type: 3}
   VirusFormation: {fileID: 0}
   Enemy2Formation: {fileID: 0}
   BossFormation: {fileID: 1816946632}
