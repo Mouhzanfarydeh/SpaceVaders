@@ -7,14 +7,11 @@ public class Enemybehavior : MonoBehaviour
     //AOE
     public GameObject AOE;
     public bool Mothership = false;
-
- public Path pathToFollow; // greift auf das Script Path zu
-
     private Scene scene;
     public Path pathToFollow; // greift auf das Script Path zu
 
 //Path infos
-   public int currentWayPointID = 0;
+public int currentWayPointID = 0;
 public float speed = 2;
 //ist die entfernung vom wegpunkt, wie genau der gegner den verfolgen soll (Radius)
 public float reachDistance = 0.4f;
