@@ -51,4 +51,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Credits");
 
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu Jul");
+    }
+
 }

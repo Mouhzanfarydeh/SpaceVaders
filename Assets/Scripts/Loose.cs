@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Win : MonoBehaviour
+public class Loose : MonoBehaviour
 {
 
     public Text highscoreText;
@@ -30,14 +30,14 @@ public class Win : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButton(0)) //der erste klick der Maus
+        if (Input.GetMouseButton(0)) //der erste klick der Maus
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu Jul");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("Menu Jul");
         }
     }
 }

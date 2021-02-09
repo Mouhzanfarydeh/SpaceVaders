@@ -78,6 +78,11 @@ public class GameManager : MonoBehaviour
      // UiScript.instance.ShowStageText(level);
         UiScript.instance.UpdateRocketText(rocket); //-------------------------*** Erst mal testen
         UiScript.instance.UpdateHealthText(health);
+
+        if (hasLost == true)
+        {
+          SceneManager.LoadScene("GameOver");
+        }
     }
     
 
@@ -176,28 +181,30 @@ public class GameManager : MonoBehaviour
 
         UiScript.instance.UpdateLifeText(lifes);
 
-        if (lifes == 0)
+        if (lifes <= 0)
         {
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
             //wasp.GetComponent<PlayerBehaviour>().enabled = false;
             ScoreHolder.score = score;
             hasLost = true;
-         // StartCoroutine(waitlose());
-            //SceneManager.LoadScene("GameOver");
+
+            //Application.LoadLevel("GameOver");
+            SceneManager.LoadScene("GameOver");
+            //return;
+            // StartCoroutine(waitlose());
             // StartCoroutine(wait());
             // SceneManager.LoadScene("GameOver");
-            Invoke("LoadEnd", 5f);
-            return;
+            // Invoke("LoadEnd", 0.1f);
         }
     }
 
-    /*
-    void LoadEnd()
-    {
-        SceneManager.LoadScene("GameOver");
-    }
-    */
+    
+    //void LoadEnd()
+  //  {
+    //    SceneManager.LoadScene("GameOver");
+    //}
+    
         //Wird erhöht wenn Gegner erscheint
 
     public void AddEnemy()
@@ -318,16 +325,16 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    IEnumerator waitlose() //Koroutine
-    {
+   // IEnumerator waitlose() //Koroutine
+  //  {
         //Greift auf das SpielerSchiff zu und schaltet es aus
 
 
-        yield return new WaitForSeconds(3f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
+   //     yield return new WaitForSeconds(3f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
  
 
 
-    }
+  //  }
     
 
     void LoadNextScene()
