@@ -12,7 +12,7 @@ public class Rocketperspace : MonoBehaviour
 
     //Rocket
     public Transform[] rocketSpawns;
-    double nextFireRocket;
+    double nextFireRocket = 0.1;
 
     //GameManager rocketimUI;
 
@@ -59,8 +59,10 @@ public class Rocketperspace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rakete per leertaste schießen
-        if (Input.GetKeyDown("space") && rocketsleft > 0) // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
+        if (Time.time > nextFireRocket)
+        { 
+            // Rakete per leertaste schießen
+            if (Input.GetKeyDown("space") && rocketsleft > 0) // hier noch anpassen das man nur eine gewisse Anzahl an Raketen hat
         {
             GameManager.instance.DecreaseRockets();
 
@@ -80,7 +82,7 @@ public class Rocketperspace : MonoBehaviour
 
             AudioSource.PlayClipAtPoint(Empty, transform.position);
         }
-
+        }
     }
     
 

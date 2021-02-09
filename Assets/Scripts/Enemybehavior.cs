@@ -43,6 +43,9 @@ public float rotationSpeed = 5f;
       public int /* notinFormation */ Score;
 
     // Start is called before the first frame update
+
+    public Material[] Materials;
+    public static int currentMaterials;
     void Start()
     {
         
