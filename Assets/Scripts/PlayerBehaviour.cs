@@ -105,6 +105,11 @@ public class PlayerBehaviour : MonoBehaviour
             Schwanz2.enabled = true;
             Schwanz3.enabled = true;
             Schwanz4.enabled = false;
+            Rauchbei1Schaden.SetActive(false);
+            Rauchbei2Schaden.SetActive(false);
+            //Skin für die Wespe zurücksetzten           
+            currentMaterials = 0;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
 
 
         }
@@ -145,6 +150,15 @@ public class PlayerBehaviour : MonoBehaviour
             Chichi1.enabled = false;
             Chichi2.enabled = false;
             Chichi3.enabled = true;
+        }
+
+        if (Life == 6)
+        {
+            Schwanz1.enabled = true;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = true;
+            Schwanz5.enabled = true;
         }
 
         if (Life == 5)
