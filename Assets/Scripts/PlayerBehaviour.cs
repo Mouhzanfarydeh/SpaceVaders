@@ -60,6 +60,9 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip HitSound;
     public AudioClip Alarm;
     public AudioClip Respawn;
+    public AudioClip Damm;
+    public AudioClip LevelUp;
+    public AudioClip Holy;
 
     [Header("UI Icons")]
    // public SpriteRenderer Chichi1;
@@ -111,6 +114,11 @@ public class PlayerBehaviour : MonoBehaviour
             currentMaterials = 0;
             GetComponent<Renderer>().material = Materials[currentMaterials];
 
+            scene = SceneManager.GetActiveScene();
+            if (scene.name == "Stage2")
+            {
+                AudioSource.PlayClipAtPoint(Holy, transform.position);
+            }
 
         }
 
@@ -329,6 +337,7 @@ public class PlayerBehaviour : MonoBehaviour
         health--;
 
         AudioSource.PlayClipAtPoint(HitSound, transform.position);
+        AudioSource.PlayClipAtPoint(Damm, transform.position);
 
         currentMaterials++;
         currentMaterials %= Materials.Length;
@@ -412,6 +421,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Bonusss()
     {
+        AudioSource.PlayClipAtPoint(LevelUp, transform.position);
         Life++;
     }
     

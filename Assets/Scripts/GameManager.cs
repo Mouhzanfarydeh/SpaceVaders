@@ -180,8 +180,10 @@ public class GameManager : MonoBehaviour
         {
             // Game Over - Losing Condition
             //ScoreHolder.level = level; ----------------------- unfertig, zeigt an in welcher level spieler gestorben ist
+            wasp.GetComponent<PlayerBehaviour>().enabled = false;
             ScoreHolder.score = score;
             hasLost = true;
+         // StartCoroutine(waitlose());
             SceneManager.LoadScene("GameOver");
             // StartCoroutine(wait());
             // SceneManager.LoadScene("GameOver");
@@ -305,6 +307,7 @@ public class GameManager : MonoBehaviour
             //PlayerBehaviour Wasp = GetComponent<PlayerBehaviour>();
             //StartCoroutine (Wasp.Reset());
             //StartCoroutine(Reset());
+            //StartCoroutine(waitlose());
 
             // StartCoroutine(Jump());
             //level++;
@@ -314,18 +317,18 @@ public class GameManager : MonoBehaviour
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-    /*
-    IEnumerator Jump() //Koroutine
+    
+    IEnumerator waitlose() //Koroutine
     {
         //Greift auf das SpielerSchiff zu und schaltet es aus
-        GetComponent<Collider>().enabled = false;
 
-        yield return new WaitForSeconds(5f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
 
-        GetComponent<Collider>().enabled = true;
+        yield return new WaitForSeconds(3f); //warte 5 sekunden ab bevor man sich wieder bewegen kann
+ 
+
 
     }
-    */
+    
 
     void LoadNextScene()
     {

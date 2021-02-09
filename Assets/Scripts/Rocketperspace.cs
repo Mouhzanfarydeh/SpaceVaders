@@ -12,7 +12,7 @@ public class Rocketperspace : MonoBehaviour
 
     //Rocket
     public Transform[] rocketSpawns;
-    double nextFireRocket = 0.1;
+    double nextFireRocket = 0.0001;
 
     //GameManager rocketimUI;
 
