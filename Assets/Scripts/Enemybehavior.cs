@@ -82,7 +82,7 @@ public class Enemybehavior : MonoBehaviour
     void Update()
     {
 
-        /*
+        
         if (health < 1300 && health > 1200)
         {
           Object.GetComponent<MeshRenderer>().material = Material0;
@@ -112,7 +112,7 @@ public class Enemybehavior : MonoBehaviour
         {
           Object.GetComponent<MeshRenderer>().material = Material5;
         }
-        */
+        
 
         switch (enemyState)
         {

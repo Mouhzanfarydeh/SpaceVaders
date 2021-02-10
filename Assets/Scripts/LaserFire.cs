@@ -50,7 +50,7 @@ public class LaserFire : MonoBehaviour
 
             if (countdown <= 0f)
             {
-                Lasersound.SetActive(true);
+               // Lasersound.SetActive(true);
                 Laser();
                 if (Physics.Raycast(laserRay, out hit))
                 {
@@ -62,9 +62,10 @@ public class LaserFire : MonoBehaviour
                         GameObject.Find("wasp").GetComponent<PlayerBehaviour>().TakeDamage(damage);
 
                         countdown = cooldown;
-                        Lasersound.SetActive(false);
+                       // Lasersound.SetActive(false);
                     }
                 }
+                Lasersound.SetActive(false);
             }
         }
 
