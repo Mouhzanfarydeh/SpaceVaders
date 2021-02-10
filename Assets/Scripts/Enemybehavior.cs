@@ -11,11 +11,11 @@ public class Enemybehavior : MonoBehaviour
     public Path pathToFollow; // greift auf das Script Path zu
 
 //Path infos
-public int currentWayPointID = 0;
-public float speed = 2;
+    public int currentWayPointID = 0;
+    public float speed = 2;
 //ist die entfernung vom wegpunkt, wie genau der gegner den verfolgen soll (Radius)
-public float reachDistance = 0.4f;
-public float rotationSpeed = 5f;
+    public float reachDistance = 0.4f;
+    public float rotationSpeed = 5f;
 
     public float detonationTimer = 0f;
 
@@ -39,7 +39,7 @@ public float rotationSpeed = 5f;
     public GameObject Explosion;
 
     // Leben der Gegner
-    public int health = 1;
+    public int health;
     // weiter gehts in Zeile 100
 
     // Score
@@ -48,31 +48,31 @@ public float rotationSpeed = 5f;
 
     // Start is called before the first frame update
 
-    public Material[] Materials;
-    public static int currentMaterials;
+   // public Material[] Materials;
+   // public static int currentMaterials;
     // private GameObject Test;
     //public Renderer childColor;
     //public Material demagedMaterial;
     void Start()
     {
-        if (scene.name == "Stage2")
-        {
+       // if (scene.name == "Stage2")
+       // {
 
             //Skin für den Boss zurücksetzten           
-             currentMaterials = 5;
+         //    currentMaterials = 5;
 
             //childColor = GetComponentInChildren<MeshRenderer>();
             //GameObject Unterobjekt = transform.GetChild("Test").gameObject;
             // Test = GameObject.Find("Test");
             // Test<Renderer>().material = Materials[currentMaterials];
             //Test.renderer.material = Materials[currentMaterials];
-            GetComponent<MeshRenderer>().material = Materials[currentMaterials];
+        //    GetComponent<MeshRenderer>().material = Materials[currentMaterials];
             //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
             //childColor.material = demagedMaterial;
 
 
 
-        }
+       // }
     }
  
  
@@ -80,7 +80,7 @@ public float rotationSpeed = 5f;
    void Update()
     {
 
-        
+        /*
         if (health == 1200)
         {
             currentMaterials %= Materials.Length;
@@ -122,6 +122,7 @@ public float rotationSpeed = 5f;
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
         }
+        */
         
         switch (enemyState)
         {
