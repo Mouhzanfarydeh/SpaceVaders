@@ -63,6 +63,11 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip Damm;
     public AudioClip LevelUp;
     public AudioClip Holy;
+    public AudioClip Chichi;
+  //public AudioClip Mother;
+    public float countdown = 1f;
+    public GameObject Mother;
+    AudioSource attachedAudioSource;
 
     [Header("UI Icons")]
    // public SpriteRenderer Chichi1;
@@ -84,6 +89,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
+        Mother = GameObject.Find("Mother");
+        attachedAudioSource = Mother.GetComponent<AudioSource>();
+        Mother.SetActive(false);
         /*
         Chichi1 = GetComponent<Image>();
         Chichi2 = GetComponent<Image>();
@@ -92,8 +100,6 @@ public class PlayerBehaviour : MonoBehaviour
         Schwanz2 = GetComponent<Image>();
         Schwanz3 = GetComponent<Image>();
         */
-
-
         initPosition = transform.position; //Position an der das Schiff resetet wird
 
         scene = SceneManager.GetActiveScene();
@@ -119,7 +125,6 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(Holy, transform.position);
             }
-
         }
 
     }
@@ -127,6 +132,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (health == 3)
         {
             Rauchbei1Schaden.SetActive(false);
@@ -300,6 +306,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if ( /* isDragged &&  */ Time.time > nextFireBullet) //&& !isDead)
         {
+            countdown++;
             nextFireBullet = Time.time + fireRate;
             for (int i = 0; i < bulletLevel; i++)
             {
@@ -307,6 +314,16 @@ public class PlayerBehaviour : MonoBehaviour
                 // Bringt der Bullet Schaden
                 newBullet.GetComponent<PlayerBullet>().SetDamage(bulletDamage);
             }
+        }
+        if (countdown == 30)
+        {
+            AudioSource.PlayClipAtPoint(Chichi, transform.position);
+            
+        }
+        if (countdown == 20)
+        {
+            Mother.SetActive(true);
+           // AudioSource.PlayClipAtPoint(Mother, transform.position);
         }
     }
 

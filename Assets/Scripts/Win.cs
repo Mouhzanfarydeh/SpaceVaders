@@ -15,7 +15,7 @@ public class Win : MonoBehaviour
     {
         highscoreText.text = " " + ScoreHolder.score;
 
-        Invoke("DisableText", 3f);//invoke after 5 seconds
+        Invoke("DisableText", 5f);//invoke after 5 seconds
 
     }
 

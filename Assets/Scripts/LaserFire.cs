@@ -11,6 +11,9 @@ public class LaserFire : MonoBehaviour
     public float cooldown = 5f;
     public int damage;
 
+    public GameObject Lasersound;
+    AudioSource attachedAudioSource;
+
     bool applyDamage;
     
     [Header("Use Laser")]
@@ -19,7 +22,10 @@ public class LaserFire : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Target").transform;
-        
+
+        Lasersound = GameObject.Find("Lasersound");
+        attachedAudioSource = Lasersound.GetComponent<AudioSource>();
+        Lasersound.SetActive(false);
     }
 
     void Update()
@@ -44,6 +50,7 @@ public class LaserFire : MonoBehaviour
 
             if (countdown <= 0f)
             {
+                Lasersound.SetActive(true);
                 Laser();
                 if (Physics.Raycast(laserRay, out hit))
                 {
@@ -55,7 +62,7 @@ public class LaserFire : MonoBehaviour
                         GameObject.Find("wasp").GetComponent<PlayerBehaviour>().TakeDamage(damage);
 
                         countdown = cooldown;
-
+                        Lasersound.SetActive(false);
                     }
                 }
             }

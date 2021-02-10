@@ -47,83 +47,73 @@ public class Enemybehavior : MonoBehaviour
       public int /* notinFormation */ Score;
 
     // Start is called before the first frame update
-
+    public GameObject Object;
    // public Material[] Materials;
    // public static int currentMaterials;
+    
+    public Material Material0;
+    public Material Material1;
+    public Material Material2;
+    public Material Material3;
+    public Material Material4;
+    public Material Material5;
+    
+    // public Material[] Materials;
+    // public static int currentMaterials;
     // private GameObject Test;
     //public Renderer childColor;
     //public Material demagedMaterial;
     void Start()
     {
-       // if (scene.name == "Stage2")
-       // {
-
-            //Skin für den Boss zurücksetzten           
-         //    currentMaterials = 5;
-
-            //childColor = GetComponentInChildren<MeshRenderer>();
-            //GameObject Unterobjekt = transform.GetChild("Test").gameObject;
-            // Test = GameObject.Find("Test");
-            // Test<Renderer>().material = Materials[currentMaterials];
-            //Test.renderer.material = Materials[currentMaterials];
-        //    GetComponent<MeshRenderer>().material = Materials[currentMaterials];
-            //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
-            //childColor.material = demagedMaterial;
-
-
-
-       // }
+      //  Object.GetComponent<MeshRenderer>().material = Material0;
+        //Skin für den Boss zurücksetzten           
+        //childColor = GetComponentInChildren<MeshRenderer>();
+        //GameObject Unterobjekt = transform.GetChild("Test").gameObject;
+        // Test = GameObject.Find("Test");
+        // Test<Renderer>().material = Materials[currentMaterials];
+        //Test.renderer.material = Materials[currentMaterials];
+        //GetComponent<MeshRenderer>().material = Materials[currentMaterials];
+        //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
+        //childColor.material = demagedMaterial;
     }
- 
- 
+
+
     // Update is called once per frame
-   void Update()
+    void Update()
     {
 
         /*
-        if (health == 1200)
+        if (health < 1300 && health > 1200)
         {
-            currentMaterials %= Materials.Length;
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+          Object.GetComponent<MeshRenderer>().material = Material0;
         }
 
-        if (health == 1000)
+        if (health < 1200 && health > 1040)
         {
-            currentMaterials++;
-            currentMaterials %= Materials.Length;
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+          Object.GetComponent<MeshRenderer>().material = Material1;
         }
 
-        if (health == 800)
+        if (health < 1040 && health > 780)
         {
-            currentMaterials++;
-            currentMaterials %= Materials.Length;
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+          Object.GetComponent<MeshRenderer>().material = Material2;
         }
 
-        if (health == 600)//(health < 600 && 400 > health)
+        if (health < 780 && health > 520)//(health < 600 && 400 > health)
         {
-            currentMaterials++;
-            currentMaterials %= Materials.Length;
-
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+          Object.GetComponent<MeshRenderer>().material = Material3;
         }
 
-        if (health == 400)
+        if (health < 520 && health > 260)
         {
-            currentMaterials++;
-            currentMaterials %= Materials.Length;
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+          Object.GetComponent<MeshRenderer>().material = Material4;
         }
 
-        if (health == 200)
+        if (health < 260 && health > 1)
         {
-            currentMaterials++;
-            currentMaterials %= Materials.Length;
-            GetComponent<Renderer>().material = Materials[currentMaterials];
+          Object.GetComponent<MeshRenderer>().material = Material5;
         }
         */
-        
+
         switch (enemyState)
         {
             case EnemyStates.ON_PATH:
