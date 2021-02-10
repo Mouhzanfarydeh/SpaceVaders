@@ -7,7 +7,7 @@ public class LaserFire : MonoBehaviour
     public Transform target;
     public Transform firePoint;
 
-    private float countdown = 10f;
+    public float countdown = 10f;
     public float cooldown = 5f;
     public int damage;
 
