@@ -60,6 +60,9 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip HitSound;
     public AudioClip Alarm;
     public AudioClip Respawn;
+    public AudioClip Damm;
+    public AudioClip LevelUp;
+    public AudioClip Holy;
 
     [Header("UI Icons")]
    // public SpriteRenderer Chichi1;
@@ -105,7 +108,17 @@ public class PlayerBehaviour : MonoBehaviour
             Schwanz2.enabled = true;
             Schwanz3.enabled = true;
             Schwanz4.enabled = false;
+            Rauchbei1Schaden.SetActive(false);
+            Rauchbei2Schaden.SetActive(false);
+            //Skin für die Wespe zurücksetzten           
+            currentMaterials = 0;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
 
+            scene = SceneManager.GetActiveScene();
+            if (scene.name == "Stage2")
+            {
+                AudioSource.PlayClipAtPoint(Holy, transform.position);
+            }
 
         }
 
@@ -145,6 +158,15 @@ public class PlayerBehaviour : MonoBehaviour
             Chichi1.enabled = false;
             Chichi2.enabled = false;
             Chichi3.enabled = true;
+        }
+
+        if (Life == 6)
+        {
+            Schwanz1.enabled = true;
+            Schwanz2.enabled = true;
+            Schwanz3.enabled = true;
+            Schwanz4.enabled = true;
+            Schwanz5.enabled = true;
         }
 
         if (Life == 5)
@@ -315,6 +337,7 @@ public class PlayerBehaviour : MonoBehaviour
         health--;
 
         AudioSource.PlayClipAtPoint(HitSound, transform.position);
+        AudioSource.PlayClipAtPoint(Damm, transform.position);
 
         currentMaterials++;
         currentMaterials %= Materials.Length;
@@ -360,9 +383,9 @@ public class PlayerBehaviour : MonoBehaviour
                 // End = GetComponent<Renderer>().material;
                 // Destroy(End);
                 Instantiate(Explosion, transform.position, Quaternion.identity);
+                SceneManager.LoadScene("GameOver");
 
-
-            }
+              }
               else
               {
                 StartCoroutine(Reset());
@@ -398,6 +421,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Bonusss()
     {
+        AudioSource.PlayClipAtPoint(LevelUp, transform.position);
         Life++;
     }
     

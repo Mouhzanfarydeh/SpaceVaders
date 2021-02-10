@@ -446,6 +446,9 @@ MonoBehaviour:
   HitSound: {fileID: 0}
   Alarm: {fileID: 0}
   Respawn: {fileID: 0}
+  Damm: {fileID: 0}
+  LevelUp: {fileID: 0}
+  Holy: {fileID: 0}
   Chichi1: {fileID: 0}
   Chichi2: {fileID: 0}
   Chichi3: {fileID: 0}
@@ -2926,7 +2929,7 @@ PrefabInstance:
     - target: {fileID: 1851476631689748627, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4711208715938537054, guid: 9de95410fd7dc164293d06857a4b240f, type: 3}
+      objectReference: {fileID: 2534964839176971238, guid: 642860caea9f5774289465180cd20c90, type: 3}
     - target: {fileID: 1851476631689748627, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: m_Mesh1
       value: 
@@ -2946,7 +2949,7 @@ PrefabInstance:
     - target: {fileID: 1851476631689748627, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9bd4da02471a73244bdb8fd29fd00a3c, type: 2}
+      objectReference: {fileID: 2100000, guid: 24286c2efacdd7e498921fde5866af0e, type: 2}
     - target: {fileID: 1851476631689748628, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: SizeModule.enabled
       value: 1
@@ -2973,7 +2976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851476631689748628, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 80
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1851476631689748628, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: RotationModule.curve.minScalar
@@ -3209,7 +3212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851476631689748628, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[0].value
-      value: 0.34786224
+      value: 0.54785824
       objectReference: {fileID: 0}
     - target: {fileID: 1851476631689748628, guid: 077302d6fe95e4a4e93f2f7949d2dee1, type: 3}
       propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[1].value
@@ -3481,7 +3484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011147691}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 21.68, y: 4.33, z: 325}
+  m_LocalPosition: {x: 21.68, y: 4.33, z: 329.5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5405,6 +5408,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1350346943387578814, guid: b8ec8cceaf8a2ff42aa3ad178ae4fd2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34a0296153de36048b3ae3e59e529e1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8ec8cceaf8a2ff42aa3ad178ae4fd2d, type: 3}
 --- !u!1 &919132147612410419 stripped
@@ -5437,6 +5444,7 @@ MonoBehaviour:
   Explosion: {fileID: 2914309373149034468, guid: 8bc67bca5dac56b44a5373121652b621, type: 3}
   health: 2
   Score: 200
+  Materials: []
 --- !u!23 &919132147612410421
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5563,6 +5571,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1406405911}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: Damm
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ba2dd5ca4257ef4abc83bf267713567, type: 3}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: speed
       value: 27
       objectReference: {fileID: 0}
@@ -5578,6 +5590,10 @@ PrefabInstance:
       propertyPath: Chichi3
       value: 
       objectReference: {fileID: 1109830212}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: LevelUp
+      value: 
+      objectReference: {fileID: 8300000, guid: b842e9c767923084c892ecf7ffe4fbb8, type: 3}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Respawn
       value: 
@@ -5602,6 +5618,10 @@ PrefabInstance:
       propertyPath: Schwanz5
       value: 
       objectReference: {fileID: 1178188083}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 8127824816315677249, guid: 56d116e3376bb15448f24eb6b3911908, type: 3}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: m_Enabled
       value: 1

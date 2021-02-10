@@ -1,10 +1,14 @@
-﻿
+﻿using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Enemybehavior : MonoBehaviour
 {
- public Path pathToFollow; // greift auf das Script Path zu
+    //AOE
+    public GameObject AOE;
+    public bool Mothership = false;
+    private Scene scene;
+    public Path pathToFollow; // greift auf das Script Path zu
 
 //Path infos
 public int currentWayPointID = 0;
@@ -43,15 +47,83 @@ public float rotationSpeed = 5f;
       public int /* notinFormation */ Score;
 
     // Start is called before the first frame update
+
+    public Material[] Materials;
+    public static int currentMaterials;
+    // private GameObject Test;
+    //public Renderer childColor;
+    //public Material demagedMaterial;
     void Start()
     {
-        
+        if (scene.name == "Stage2")
+        {
+
+            //Skin für den Boss zurücksetzten           
+             currentMaterials = 5;
+
+            //childColor = GetComponentInChildren<MeshRenderer>();
+            //GameObject Unterobjekt = transform.GetChild("Test").gameObject;
+            // Test = GameObject.Find("Test");
+            // Test<Renderer>().material = Materials[currentMaterials];
+            //Test.renderer.material = Materials[currentMaterials];
+            GetComponent<MeshRenderer>().material = Materials[currentMaterials];
+            //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
+            //childColor.material = demagedMaterial;
+
+
+
+        }
     }
+ 
  
     // Update is called once per frame
    void Update()
     {
-        switch(enemyState)
+
+        
+        if (health == 1200)
+        {
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 1000)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 800)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 600)//(health < 600 && 400 > health)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 400)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (health == 200)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+        
+        switch (enemyState)
         {
             case EnemyStates.ON_PATH:
                 MoveOnThePath(pathToFollow);
@@ -205,6 +277,15 @@ public float rotationSpeed = 5f;
                     formation.enemyList.Remove(formation.enemyList[i]);
                 }
             }
+
+            if (Mothership)
+            {
+                //Spawnt Mothership AOE
+                Instantiate(AOE, transform.position, transform.rotation);
+            }
+            //Spawnt Mothership AOE
+            //Instantiate(AOE, transform.position, transform.rotation);
+
 
             // Zerstöre Gegner
             Destroy(gameObject, detonationTimer);

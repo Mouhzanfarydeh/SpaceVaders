@@ -112,10 +112,12 @@ public class Formation : MonoBehaviour
                 }
             }
         }
+        /*
         if(Input.GetKeyDown(KeyCode.L))
         {
             StartCoroutine(ActivateSpread());
         }
+        */
     }
 
   IEnumerator ActivateSpread()

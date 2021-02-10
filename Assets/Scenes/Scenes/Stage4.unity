@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -190.025
       objectReference: {fileID: 0}
+    - target: {fileID: 1350346943387578814, guid: b8ec8cceaf8a2ff42aa3ad178ae4fd2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34a0296153de36048b3ae3e59e529e1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8ec8cceaf8a2ff42aa3ad178ae4fd2d, type: 3}
 --- !u!1 &630763414
@@ -1683,6 +1687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -188.532
       objectReference: {fileID: 0}
+    - target: {fileID: 1350346943387578814, guid: b8ec8cceaf8a2ff42aa3ad178ae4fd2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34a0296153de36048b3ae3e59e529e1d, type: 2}
     - target: {fileID: 1350346943387578815, guid: b8ec8cceaf8a2ff42aa3ad178ae4fd2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -278
@@ -1724,7 +1732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawnInterval: 1
   waveSpawnInterval: 15
-  VirusPrefab: {fileID: 6317174164670426214, guid: 09fbbbc1db39761468159fa6cede8c84, type: 3}
+  VirusPrefab: {fileID: 6317174164670426214, guid: adab7a8224756034dabfe9a9a6792275, type: 3}
   Enemy2Prefab: {fileID: 0}
   BossPrefab: {fileID: 0}
   VirusFormation: {fileID: 636105688}
@@ -2998,6 +3006,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1406405911}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: Damm
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ba2dd5ca4257ef4abc83bf267713567, type: 3}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Chichi1
       value: 
       objectReference: {fileID: 1865704798}
@@ -3009,6 +3021,10 @@ PrefabInstance:
       propertyPath: Chichi3
       value: 
       objectReference: {fileID: 1865704796}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: LevelUp
+      value: 
+      objectReference: {fileID: 8300000, guid: b842e9c767923084c892ecf7ffe4fbb8, type: 3}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Respawn
       value: 
@@ -3033,6 +3049,10 @@ PrefabInstance:
       propertyPath: Schwanz5
       value: 
       objectReference: {fileID: 1865704791}
+    - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 8127824816315677249, guid: 56d116e3376bb15448f24eb6b3911908, type: 3}
     - target: {fileID: 2371787248356745309, guid: 3ea933666431afd4a9b9c3604c4b4359, type: 3}
       propertyPath: Rauchbei1Schaden
       value: 
