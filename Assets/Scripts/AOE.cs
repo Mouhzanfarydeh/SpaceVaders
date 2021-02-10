@@ -6,9 +6,11 @@ public class AOE : MonoBehaviour
 {
     Vector3 temp;
     public int damage;
+    public float growthspeed;
+    public float lifetime = 1f;
     void Start()
     {
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, lifetime);
     }
 
     // Update is called once per frame
@@ -16,9 +18,9 @@ public class AOE : MonoBehaviour
     {
         temp = transform.localScale;
 
-        temp.x += Time.deltaTime* 150f;
-        temp.y += Time.deltaTime* 150f;
-        temp.z += Time.deltaTime* 150f;
+        temp.x += Time.deltaTime* growthspeed;
+        temp.y += Time.deltaTime* growthspeed;
+        temp.z += Time.deltaTime* growthspeed;
 
         transform.localScale = temp;
     }

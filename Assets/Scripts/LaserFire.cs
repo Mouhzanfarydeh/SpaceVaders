@@ -8,7 +8,7 @@ public class LaserFire : MonoBehaviour
     public Transform firePoint;
 
     private float countdown = 10f;
-
+    public float cooldown = 5f;
     public int damage;
 
     bool applyDamage;
@@ -39,19 +39,26 @@ public class LaserFire : MonoBehaviour
 
         if (useLaser)
         {
-            if(Physics.Raycast(laserRay, out hit))
+            if (lineRenderer.enabled)
+                lineRenderer.enabled = false;
+
+            if (countdown <= 0f)
             {
-                if(hit.collider.tag == "Player")
+                Laser();
+                if (Physics.Raycast(laserRay, out hit))
                 {
-                    Debug.Log("Did Hit!");
-                    applyDamage = true;
+                    if (hit.collider.tag == "Player")
+                    {
+                        Debug.Log("Did Hit!");
+                        applyDamage = true;
 
-                    GameObject.Find("wasp").GetComponent<PlayerBehaviour>().TakeDamage(damage);
+                        GameObject.Find("wasp").GetComponent<PlayerBehaviour>().TakeDamage(damage);
 
+                        countdown = cooldown;
 
+                    }
                 }
             }
-            Laser();
         }
 
         countdown -= Time.deltaTime;
