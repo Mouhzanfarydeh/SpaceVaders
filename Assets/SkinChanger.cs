@@ -4,7 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class SkinChanger : MonoBehaviour //Enemybehavior 
 {
-    public Enemybehavior Skin;
+    /*
+    
+    GameObject Boss = GameObject.Find("FinalBossLaser 2 1 1 1");
+    Enemybehavior enemybehavior = Boss.GetComponent<Enemybehavior>();
+    //public Enemybehavior MyLife;
+    //public Transform target;
+    public int life;
+    //public Enemybehavior.health;
+    //public Enemybehavior = Skin;
+    // public int health;
     public Material[] Materials;
     public static int currentMaterials;
     private Scene scene;
@@ -13,18 +22,22 @@ public class SkinChanger : MonoBehaviour //Enemybehavior
     //public Material demagedMaterial;
     void Start()
     {
-        if (scene.name == "Stage2")
+       // if (scene.name == "Stage2")
         {
-
+           // MyLife.health;
             //Skin für den Boss zurücksetzten           
-            currentMaterials = 5;
+           // currentMaterials = 5;
 
             //childColor = GetComponentInChildren<MeshRenderer>();
             //GameObject Unterobjekt = transform.GetChild("Test").gameObject;
             // Test = GameObject.Find("Test");
             // Test<Renderer>().material = Materials[currentMaterials];
             //Test.renderer.material = Materials[currentMaterials];
-            GetComponent<MeshRenderer>().material = Materials[currentMaterials];
+      // GetComponent<MeshRenderer>().material = Materials[currentMaterials];
+           // if (currentMaterials == 5)
+           // {
+           //     Debug.LogError("There is no component on this gameobject");
+          //  }
             //gameObject.GetComponent<MeshRenderer>().material = demagedMaterial;
             //childColor.material = demagedMaterial;
 
@@ -37,30 +50,33 @@ public class SkinChanger : MonoBehaviour //Enemybehavior
     // Update is called once per frame
     void Update()
     {
-        
-        Skin = GameObject.Find("FinalBossLaser 2 1 1 1").GetComponent<Enemybehavior>();
+        life = enemybehavior.health;
+        //Life = Enemybehavior.health;
+
+        //Skin = GameObject.Find("FinalBossLaser 2 1 1 1").GetComponent<Enemybehavior>();
         //==
-        if (Skin.health < 1200)
-        {
-            currentMaterials %= Materials.Length;
-            GetComponent<Renderer>().material = Materials[currentMaterials];
-        }
-
-        if (Skin.health < 1000)
+        if (life < 1200)
         {
             currentMaterials++;
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
-        if (Skin.health < 800)
+        if (life < 1000)
         {
             currentMaterials++;
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
-        if (Skin.health < 600)//(health < 600 && 400 > health)
+        if (life < 800)
+        {
+            currentMaterials++;
+            currentMaterials %= Materials.Length;
+            GetComponent<Renderer>().material = Materials[currentMaterials];
+        }
+
+        if (life < 600)//(health < 600 && 400 > health)
         {
             currentMaterials++;
             currentMaterials %= Materials.Length;
@@ -68,14 +84,14 @@ public class SkinChanger : MonoBehaviour //Enemybehavior
             GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
-        if (Skin.health < 400)
+        if (life < 400)
         {
             currentMaterials++;
             currentMaterials %= Materials.Length;
             GetComponent<Renderer>().material = Materials[currentMaterials];
         }
 
-        if (Skin.health < 200)
+        if (life < 200)
         {
             currentMaterials++;
             currentMaterials %= Materials.Length;
@@ -83,4 +99,5 @@ public class SkinChanger : MonoBehaviour //Enemybehavior
         }
         
     }
+    */
 }
