@@ -599,14 +599,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394099220}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d306821f49d1e2428d30a885a0fdc2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 769282b3062c20046899a1b2dddc8787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highscoreText: {fileID: 1510262767}
-  Highscore: {fileID: 1337188269}
-  winText: {fileID: 1484556133}
 --- !u!1 &407500531
 GameObject:
   m_ObjectHideFlags: 0
